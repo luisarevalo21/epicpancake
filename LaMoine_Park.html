@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+
+<head>
+    <link rel = "stylesheet" type = "text/css" href = "styleSheet.css" />
+
+</head>
+<html>
+<body>
+
+    <h1>LaMoine Park, Richmond (Cheese Park)</h1>
+    <p id="copyText"></p>
+
+
+    <div>
+        <p id="date">Date -  </p>
+        <p id="time">Time - </p>
+    </div>
+    <br>
+
+    <div class="w3-container" id="instinctContainer">
+        <ul id="instinctList"></ul>
+    </div>
+
+    <div class="w3-container" id="mysticContainer">
+        <ul id="mysticList"></ul>
+    </div>
+
+    <div class="w3-container" id="valorContainer">
+        <ul id="valorList"> </ul>
+    </div>
+
+    <p id="noEntries"></p>
+    <!-- <ol id="myList"></ol> -->
+
+    <textarea id="foo"></textarea>
+    <button class="btn" data-clipboard-target="#foo">Copy</button>
+
+
+</body>
+</html>
+
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script type='text/javascript'> 
+    var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/15mSqg-uGZTmQBEu_hqvNzaCiSPGi8JapuV46WmsDRvM/edit?usp=sharing';
+
+    function init() {
+        Tabletop.init( { key: publicSpreadsheetUrl,
+            callback: showInfo,
+            simpleSheet: true } )
+    }
+
+    var copyArray = [];
+    new ClipboardJS('.btn');
+    function showInfo(data, tabletop) {
+// alert('Successfully processed!')
+// console.log(data);
+
+
+var list = tabletop.sheets("LaMoine Park, Richmond (Cheese Park)").toArray();
+// var copyArray = [];
+
+// console.log("before the if");
+
+if(list.length === 0) {
+
+    console.log("inside the if statement");
+    var p = document.createElement("p");
+    p.innerHTML = "There is no EX Raid currently scheduled for this location";
+    document.getElementById('noEntries').appendChild(p);
+    console.log("Nothing to display")
+
+}
+else {
+    console.log("inside the else now");
+    var time = list[0][5];
+    var date = list[0][4];
+// var newArray = list.join(', ');
+console.log(list[0][0]);
+console.log(list[0][5]);
+document.getElementById("date").innerHTML = "Date - " + date; 
+document.getElementById("time").innerHTML = "Time - " + time;
+
+
+
+console.log("lenght of the list is:")
+console.log(list[0].length);
+var attendence = "";
+var team = "";
+
+for ( i = 0; i < list.length; i++) {
+    attendence = list[i][6];
+    team = list[i][2];
+
+    // console.log("printing the color of team now");
+    // console.log(team);
+
+
+    if (attendence ===  "Yes, I will be there." ){
+        var s = list[i][0].trim() + ", " + list[i][1].trim() +  ", " + list[i][3].trim();
+        var li = document.createElement("li");
+        li.id = teamColor(team);
+
+        console.log(li.id);
+
+        var text = document.createTextNode(s);
+        li.appendChild(text);
+        document.getElementById(li.id).appendChild(li);
+        copyArray[i] =  s;
+        console.log("print right now !!!!!!!!!!!!!!")
+        console.log(copyArray[i]);
+    }
+    else if (attendence === "My friend will play for me (enter their name in the comment)"){
+        var s = list[i][0].trim() + ", " + list[i][1].trim()+ ", " + list[i][3].trim() + ", " + "via proxy";
+        var li = document.createElement("li");
+        li.id = teamColor(team);
+        var text = document.createTextNode(s);
+        li.appendChild(text);
+        document.getElementById(li.id).appendChild(li);
+        copyArray[i] = s;
+    }
+    else if (attendence === "I need someone to play for me (add your telegram name in the comments so an admin can contact you)"){
+        var s = list[i][0].trim() + ", " + list[i][1].trim()  + ", " + list[i][3].trim() + ", " +  "needs proxy";
+        var li = document.createElement("li");
+        li.id = teamColor(team);
+        var text = document.createTextNode(s);
+        li.appendChild(text);
+        document.getElementById(li.id).appendChild(li);
+        copyArray[i] = s;
+    }
+}
+checkContainer();
+copy();
+
+}
+}
+console.log("printing the array now");
+
+
+
+
+function copy() {
+    var fullString = "";
+    for(var i =0; i<copyArray.length; i++){
+        fullString += copyArray[i] + "\n" + "" ;
+
+    }
+    document.getElementById("foo").value = fullString
+    console.log(fullString);
+
+}
+
+function checkContainer(){
+    console.log('insinde the check container method');
+    if (document.getElementById("instinctList").hasChildNodes() === false)
+    {
+        var s = "No Instincts";
+        var li = document.createElement("li");
+        li.id = "instinctList";
+        console.log(li.id);
+        var text = document.createTextNode(s);
+        li.appendChild(text);
+        document.getElementById(li.id).appendChild(li);
+        copyArray[0] = s;
+        
+    }
+   
+
+   }
+
+function teamColor(team){
+    switch(team){
+
+
+        case "Instinct":
+        return "instinctList";
+        case "Mystic":
+        return "mysticList";
+
+        case "Valor":
+        return "valorList";
+
+        default:
+        return "no team";
+    }
+
+}
+
+window.addEventListener('DOMContentLoaded', init)
+</script>
+
+

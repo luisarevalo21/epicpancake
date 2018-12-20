@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<head>
+ <link rel = "stylesheet" type = "text/css" href = "styleSheet.css" />
+
+</head>
+<html>
+<body>
+    
+    <h1>Burg Park</h1>
+    <div>
+        <p id="date">Date - </p>
+        <p id="time">Time - </p>
+    </div>
+    <br>
+    <p id="noEntries"></p>
+    
+    <ol id="myList"></ol>
+    
+        <!-- <table id="myList">  </table>
+        -->
+    </body>
+    </html>
+
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+    <script type='text/javascript'>
+        var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/15mSqg-uGZTmQBEu_hqvNzaCiSPGi8JapuV46WmsDRvM/edit?usp=sharing';
+
+        function init() {
+            Tabletop.init( { key: publicSpreadsheetUrl,
+                callback: showInfo,
+                simpleSheet: true } )
+        }
+
+        function showInfo(data, tabletop) {
+// alert('Successfully processed!')
+
+console.log(data);
+
+
+//change here to the spread sheet name
+var list = tabletop.sheets("").toArray();
+if(list.length ===0){
+    
+ var p = document.createElement("p");
+ p.innerHTML = "There is no EX Raid currently scheduled for this location";
+ document.getElementById('noEntries').appendChild(p);
+ console.log("Nothing to display")
+
+}
+else {
+    var time = list[0][5];
+    var date = list[0][4];
+// var newArray = list.join(', ');
+console.log(list[0][0]);
+console.log(list[0][5]);
+document.getElementById("date").innerHTML = "Date - " + date; 
+document.getElementById("time").innerHTML = "Time - " + time;
+
+console.log("lenght of the list is:")
+console.log(list[0].length);
+var attendence = "";
+
+for ( i = 0; i < list.length; i++) {
+    attendence = list[i][6];
+    var team = "";
+    team = list[i][2];
+
+    console.log("printing the color of team now");
+    console.log(team);
+
+
+    if (attendence ===  "Yes, I will be there." ){
+        var s = list[i][0].trim() + ", " + list[i][1].trim() +  ", " + list[i][3].trim();
+        var li = document.createElement("li");
+        li.id = teamColor(team);
+        var text = document.createTextNode(s);
+        li.appendChild(text);
+        document.getElementById("myList").appendChild(li);
+    }
+    else if (attendence === "My friend will play for me (enter their name in the comment)"){
+        var s = list[i][0].trim() + ", " + list[i][1].trim() + ", " + list[i][3].trim()+ ", " + "via proxy";
+        var li = document.createElement("li");
+        li.id = teamColor(team);
+        var text = document.createTextNode(s);
+        li.appendChild(text);
+        document.getElementById("myList").appendChild(li);
+    }
+    else if (attendence === "I need someone to play for me (add your telegram name in the comments so an admin can contact you)"){
+        var s = list[i][0].trim() + ", " + list[i][1].trim()  + ", " + list[i][3].trim() + ", " +  "needs proxy";
+        var li = document.createElement("li");
+        li.id = teamColor(team);
+        var text = document.createTextNode(s);
+        li.appendChild(text);
+        document.getElementById("myList").appendChild(li);
+    }
+}
+}
+}
+
+
+function teamColor(team){
+    switch(team){
+
+
+     case "Instinct":
+     return "yellow";
+     case "Mystic":
+     return "blue";
+
+     case "Valor":
+     return "red";
+
+     default:
+     return "no team";
+ }
+
+}
+
+window.addEventListener('DOMContentLoaded', init)
+</script>
