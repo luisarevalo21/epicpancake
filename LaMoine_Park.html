@@ -1,46 +1,78 @@
 <!DOCTYPE html>
-
-
+<html lang="en">
 <head>
-    <link rel = "stylesheet" type = "text/css" href = "styleSheet.css" />
-
+<meta charset="UTF-8">
+<title>Raid Assistant</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#77828C">
+<meta name="apple-mobile-web-app-status-bar-style" content="#77828C">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="styleSheet.css" />
+<link rel="shortcut icon" type="image/png" href="/img/icon72.png"/>
+<link rel="shortcut icon" type="image/png" href="/img/icon72.png"/>
+<link rel="apple-touch-icon" sizes="57x57" href="/img/icon57.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/img/icon72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/img/icon114.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/img/icon144.png">
+<link rel="apple-touch-icon" sizes="60×60" href="/img/icon60.png">
+<link rel="apple-touch-icon" sizes="76×76" href="/img/icon76.png">
+<link rel="apple-touch-icon" sizes="120×120" href="/img/icon120.png">
+<link rel="apple-touch-icon" sizes="152×152" href="/img/icon152.png">
+<link rel="apple-touch-icon" sizes="180×180" href="/img/icon180.png">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117947692-1"></script>
+<script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+ gtag('config', 'UA-117947692-1');
+</script>
 </head>
-<html>
 <body>
-
-    <h1>LaMoine Park, Richmond (Cheese Park)</h1>
-    <p id="copyText"></p>
-
-
-    <div>
-        <p id="date">Date -  </p>
-        <p id="time">Time - </p>
+<!-- Start Header -->
+  <div class="row align-items-center">
+    <div class="col-8">
+      <div class="ralogo"><a href="https://epicpancake.com/"><img src="../img/ep-logo-green.svg"></a></div>
     </div>
-    <br>
-
-    <div class="w3-container" id="instinctContainer">
-        <ul id="instinctList"></ul>
+    <div class="col-4">
+    <div class="form-group">
+        <a class="btn btn-primary racopy radonate" href="https://www.paypal.me/theepicpancake" role="button" target="_blank">Donate</a>
     </div>
-
-    <div class="w3-container" id="mysticContainer">
-        <ul id="mysticList"></ul>
     </div>
-
-    <div class="w3-container" id="valorContainer">
-        <ul id="valorList"> </ul>
-    </div>
-
-    <p id="noEntries"></p>
-    <!-- <ol id="myList"></ol> -->
-
-    <textarea id="foo"></textarea>
-    <button class="btn" data-clipboard-target="#foo">Copy</button>
-
-
+  </div>
+<!-- Start Title Area -->
+<header>
+    <h1>Lamoine (Cheese) Park</h1>
+    <div id="event-info"><span id="date"></span><span id="time"></span></div>
+</header>
+<!-- Start Instinct -->
+<div class="w3-container" id="instinctContainer">
+    <ul id="instinctList"></ul>
+</div>
+<!-- Start Mystic -->
+<div class="w3-container" id="mysticContainer">
+    <ul id="mysticList"></ul>
+</div>
+<!-- Start Valor -->
+<div class="w3-container" id="valorContainer">
+    <ul id="valorList"> </ul>
+</div>
+<!-- End Valor -->
+<p id="noEntries"></p>
+<textarea id="raidlist"></textarea>
+<!-- Footer -->
+<div class="form-group">
+    <button type="button" class="racopy btn btn-primary" data-toggle="tooltip" title="Copied" data-clipboard-target="#raidlist">Copy</button>
+</div>
+<br>
+<a href="http://telegra.ph/PokeRaiderBot-09-16" target="_blank">To learn more about @PokeRaiderBot and what commands you can use, click here.</a>
 </body>
 </html>
-
-
 <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
 <script type='text/javascript'> 
@@ -58,7 +90,6 @@
 // alert('Successfully processed!')
 // console.log(data);
 
-
 var list = tabletop.sheets("LaMoine Park, Richmond (Cheese Park)").toArray();
 // var copyArray = [];
 
@@ -68,7 +99,7 @@ if(list.length === 0) {
 
     console.log("inside the if statement");
     var p = document.createElement("p");
-    p.innerHTML = "There is no EX Raid currently scheduled for this location";
+    p.innerHTML = "No EX Raid Scheduled";
     document.getElementById('noEntries').appendChild(p);
     console.log("Nothing to display")
 
@@ -80,8 +111,8 @@ else {
 // var newArray = list.join(', ');
 console.log(list[0][0]);
 console.log(list[0][5]);
-document.getElementById("date").innerHTML = "Date - " + date; 
-document.getElementById("time").innerHTML = "Time - " + time;
+document.getElementById("date").innerHTML = date; 
+document.getElementById("time").innerHTML = time;
 
 
 
@@ -147,7 +178,7 @@ function copy() {
         fullString += copyArray[i] + "\n" + "" ;
 
     }
-    document.getElementById("foo").value = fullString
+    document.getElementById("raidlist").value = fullString
     console.log(fullString);
 
 }
@@ -163,7 +194,31 @@ function checkContainer(){
         var text = document.createTextNode(s);
         li.appendChild(text);
         document.getElementById(li.id).appendChild(li);
-        copyArray[0] = s;
+        copyArray.push(s);
+        
+    }
+    if (document.getElementById("mysticList").hasChildNodes() === false)
+    {
+        var s = "No Mystics";
+        var li = document.createElement("li");
+        li.id = "mysticList";
+        console.log(li.id);
+        var text = document.createTextNode(s);
+        li.appendChild(text);
+        document.getElementById(li.id).appendChild(li);
+        copyArray.push(s);
+        
+    }
+    if (document.getElementById("valorList").hasChildNodes() === false)
+    {
+        var s = "No Valors";
+        var li = document.createElement("li");
+        li.id = "valorList";
+        console.log(li.id);
+        var text = document.createTextNode(s);
+        li.appendChild(text);
+        document.getElementById(li.id).appendChild(li);
+        copyArray.push(s);
         
     }
    
@@ -190,5 +245,3 @@ function teamColor(team){
 
 window.addEventListener('DOMContentLoaded', init)
 </script>
-
-
