@@ -175,10 +175,9 @@ console.log("printing the array now");
 
 function copy() {
     var fullString = "";
-    for(var i =0; i<copyArray.length; i++){
-        fullString += copyArray[i] + "\n" + "" ;
-
-    }
+     for(var i in copyArray){
+       fullString += copyArray[i] + "\n" + "" ;
+   }
     document.getElementById("raidlist").value = fullString
     console.log(fullString);
 
