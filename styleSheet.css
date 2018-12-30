@@ -12,14 +12,29 @@ h1{
   color:#fff;
 }
 a {
+  color:#fff;
+}
+a:hover {
+  color:#87CEFA;
+}
+
+.newstyle{
+    color:#48E08D;
+}
+
+
+
+
+/*a {
   color:#48E08D;
 }
 a:hover {
   color:#fff;
-}
+}*/
 #noentries{
   color: white;
 }
+
 
 /* overrides */
 .btn-primary{border:none;}
