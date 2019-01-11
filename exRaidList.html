@@ -34,7 +34,7 @@
 </head>
 <body>
     <!-- Start Header -->
-  <!-- <div class="row align-items-center">
+  <div class="row align-items-center">
     <div class="col-8">
       <div class="ralogo"><a href="https://epicpancake.com/"><img src="../img/ep-logo-green.svg"></a></div>
     </div>
@@ -43,7 +43,7 @@
         <a class="btn btn-primary racopy radonate" href="https://www.paypal.me/theepicpancake" role="button" target="_blank">Donate</a>
     </div>
     </div>
-</div> -->
+</div>
 <!-- Start Title Area -->
 <header>
     <h1>Ex Raid Gyms</h1>
@@ -52,7 +52,8 @@
 <ul id="location-list" class="w3-container">
     <li><a href="Can_You_Hear_Me.html" id="Woodfield">Can You Hear There (Woodfield)</a></li>
     <li><a href="Country.html" id="Country">Country Club Vist Park Dedication Plaque</a></li>
-    <li><a href="Ever_Burning.html" id="Fernandez">Ever Burning Flame (Fernandez Park)</a></li>        
+    <li><a href="Ever_Burning.html" id="Fernandez">Ever Burning Flame (Fernandez Park)</a></li>  
+    <li><a href="Fountain_Of_Bells.html" id="Fountain">Fountain of the Bells</a></li>          
     <li><a href="Hazel_Downer.html" id="Hazel">Hazel Downer Thorton Memorial Grove (Dog Park)</a></li>
     <li><a href="LaMoine_Park.html" id="Lamoine">Lamoine (Cheese) Park</a></li>
     <li><a href="Left_Gomez.html" id="Lefty">Lefty Gomez</a></li></li>
@@ -92,6 +93,7 @@
         var  woodfield = tabletop.sheets("Can You Hear There, Hercules (Lupine Road, Park)").toArray();
         var country = tabletop.sheets("Country Club Vist Park Dedication Plaque, Richmond").toArray();
         var fernandez = tabletop.sheets("Ever Burning Flame, Pinole (Fernandez Park)").toArray();
+        var fountain = tabletop.sheets("Fountain of the Bells, San Pablo").toArray();
         var hazel = 
         tabletop.sheets("Hazel Downer Thorton Memorial Grove, Pinole (Pinole Valley dog park)").toArray();
         var lamoine = tabletop.sheets("LaMoine Park, Richmond (Cheese Park)").toArray();
@@ -101,7 +103,7 @@
         var pinoleValleyPark = tabletop.sheets("Pinole Valley Park, Pinole").toArray();
 
         var playground = tabletop.sheets("Playground, Hercules (Refugio Park)").toArray();
-
+        
         var pointPinole = tabletop.sheets("Playground, Hercules (Refugio Park)").toArray();
         var starbucksRichmondParkway = tabletop.sheets("Starbucks, Richmond Parkway location").toArray();
 
@@ -121,6 +123,12 @@
         }
         if(fernandez.length !==0){
             var element =  document.getElementById("Fernandez");
+            element.className += "newstyle";   
+        }
+
+          // uncomment for fountain of the bell 
+        if(fountain.length !==0){
+          var element =  document.getElementById("Fountain");
             element.className += "newstyle";   
         }
         if(hazel.length !==0){
