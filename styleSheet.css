@@ -1,32 +1,30 @@
-body{
-  font-family: 'Roboto', sans-serif;
+body {
+  font-family: "Roboto", sans-serif;
   font-size: 1em;
-  background:#1C2630;
+  background: #1c2630;
   padding: 1.25rem;
 }
-header{
+header {
   padding-bottom: 1em;
 }
-h1{
-  font-size:1.5em;
-  color:#fff;
+h1 {
+  font-size: 1.5em;
+  color: #fff;
 }
 a {
-  color:#fff;
+  color: #fff;
 }
 a:hover {
-  color:#87CEFA;
+  color: #87cefa;
 }
 
-.newstyle{
-    color:#48E08D;
+.newStyle {
+  color:#48E08D;
 }
 
-#noEntries{
-	color: white;
+#noEntries {
+  color: white;
 }
-
-
 
 /*a {
   color:#48E08D;
@@ -34,56 +32,92 @@ a:hover {
 a:hover {
   color:#fff;
 }*/
-#noentries{
+#noentries {
   color: white;
 }
 
-
 /* overrides */
-.btn-primary{border:none;}
-.btn-primary:hover, .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle, .btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus, .btn-primary.focus, .btn-primary:focus {background: #48CFE0;}
-.bs-tooltip-auto[x-placement^=right] .arrow::before, .bs-tooltip-right .arrow::before {display: none;}
-.tooltip{font-family: 'Roboto', sans-serif; !important}
-.ralogo {margin: 1.25rem 0 1.5rem 0; max-width:14rem;}
-label {color:#6c7d8e;}
-.ratime, .racopy {padding: 1rem .75rem; line-height: 28px; min-height:60px;border-radius: .25rem;}
-.racopy{background: linear-gradient(135deg, #48E08D 0%, #48CFE0 100%); font-weight: bold; width:100%; margin-top: 1.5rem;}
-.radonate {max-width:8rem; float:right; margin-top:0;}
+.btn-primary {
+  border: none;
+}
+.btn-primary:hover,
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active,
+.show > .btn-primary.dropdown-toggle,
+.btn-primary:not(:disabled):not(.disabled).active:focus,
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.show > .btn-primary.dropdown-toggle:focus,
+.btn-primary.focus,
+.btn-primary:focus {
+  background: #48cfe0;
+}
+.bs-tooltip-auto[x-placement^="right"] .arrow::before,
+.bs-tooltip-right .arrow::before {
+  display: none;
+}
+/* .tooltip{font-family: 'Roboto', sans-serif; !important} */
+.ralogo {
+  margin: 1.25rem 0 1.5rem 0;
+  max-width: 14rem;
+}
+label {
+  color: #6c7d8e;
+}
+.ratime,
+.racopy {
+  padding: 1rem 0.75rem;
+  line-height: 28px;
+  min-height: 60px;
+  border-radius: 0.25rem;
+}
+.racopy {
+  background: linear-gradient(135deg, #48e08d 0%, #48cfe0 100%);
+  font-weight: bold;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+.radonate {
+  max-width: 8rem;
+  float: right;
+  margin-top: 0;
+}
 
-#date, #time{
-  color:#6c7d8e;
-  padding:0.25em;
+#date,
+#time {
+  color: #6c7d8e;
+  padding: 0.25em;
 }
-#valorList{
-  color:#FFBFBF;
+#valorList {
+  color: #ffbfbf;
 }
-#mysticList{
-  color: #A6E9FF;
+#mysticList {
+  color: #a6e9ff;
 }
-#instinctList{
-  color: #FFF5A6;
+#instinctList {
+  color: #fff5a6;
 }
-.w3-container{
+.w3-container {
   background: #182029;
   border-radius: 3px;
 }
-.w3-container ul, #location-list{
-  padding:1em;
+.w3-container ul,
+#location-list {
+  padding: 1em;
   border-radius: 0.25em;
 }
 
-.w3-container li{
+.w3-container li {
   display: block;
-  padding:0.25em;
-  border-top: 1px solid #1C2630;
-  border-bottom: 1px solid #1C2630;
+  padding: 0.25em;
+  border-top: 1px solid #1c2630;
+  border-bottom: 1px solid #1c2630;
 }
 #location-list li {
   padding: 0.75em 0.25em;
 }
-#raidlist{
+#raidlist {
   position: absolute;
-  top:0;
-  left:0;
-  margin-left: -9999px
+  top: 0;
+  left: 0;
+  margin-left: -9999px;
 }

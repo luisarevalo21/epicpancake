@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+
     <meta charset="UTF-8">
     <title>Raid Assistant - Ex Raid Gyms</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,30 +14,30 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="styleSheet.css" />
-<link rel="shortcut icon" type="image/png" href="/img/icon72.png"/>
-<link rel="shortcut icon" type="image/png" href="/img/icon72.png"/>
-<link rel="apple-touch-icon" sizes="57x57" href="/img/icon57.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/img/icon72.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/img/icon114.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/img/icon144.png">
-<link rel="apple-touch-icon" sizes="60×60" href="/img/icon60.png">
-<link rel="apple-touch-icon" sizes="76×76" href="/img/icon76.png">
-<link rel="apple-touch-icon" sizes="120×120" href="/img/icon120.png">
-<link rel="apple-touch-icon" sizes="152×152" href="/img/icon152.png">
-<link rel="apple-touch-icon" sizes="180×180" href="/img/icon180.png">
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117947692-1"></script>
+	<link rel="shortcut icon" type="image/png" href="/img/icon72.png"/>
+	<link rel="shortcut icon" type="image/png" href="/img/icon72.png"/>
+	<link rel="apple-touch-icon" sizes="57x57" href="/img/icon57.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/img/icon72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/img/icon114.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/img/icon144.png">
+	<link rel="apple-touch-icon" sizes="60×60" href="/img/icon60.png">
+	<link rel="apple-touch-icon" sizes="76×76" href="/img/icon76.png">
+	<link rel="apple-touch-icon" sizes="120×120" href="/img/icon120.png">
+	<link rel="apple-touch-icon" sizes="152×152" href="/img/icon152.png">
+	<link rel="apple-touch-icon" sizes="180×180" href="/img/icon180.png">
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117947692-1"></script>
 <script>
-   window.dataLayer = window.dataLayer || [];
-   function gtag(){dataLayer.push(arguments);}
-   gtag('js', new Date());
-   gtag('config', 'UA-117947692-1');
+ 	 window.dataLayer = window.dataLayer || [];
+  	 function gtag(){dataLayer.push(arguments);}
+  	 gtag('js', new Date());
+   	 gtag('config', 'UA-117947692-1');
 </script>
 </head>
 <body>
     <!-- Start Header -->
-  <div class="row align-items-center">
-    <div class="col-8">
+ <!--  <div class="row align-items-center">
+    <div class="col-5">
       <div class="ralogo"><a href="https://epicpancake.com/"><img src="../img/ep-logo-green.svg"></a></div>
     </div>
     <div class="col-4">
@@ -44,7 +46,7 @@
     </div>
     </div>
 </div>
-<!-- Start Title Area -->
+ --><!-- Start Title Area -->
 <header>
     <h1>Ex Raid Gyms</h1>
 </header>
@@ -100,6 +102,7 @@
         var lefty = tabletop.sheets("Lefty Gomez Plaque, Rodeo").toArray();
         // var Lone = tabletop.sheets("Lone Tree Point, Rodeo").toArray();
         var rotary = tabletop.sheets("Pinole Rotary Club, Pinole (Marlesta Rd)").toArray();
+        console.log("rotary size is", rotary);
         var pinoleValleyPark = tabletop.sheets("Pinole Valley Park, Pinole").toArray();
 
         var playground = tabletop.sheets("Playground, Hercules (Refugio Park)").toArray();
@@ -115,59 +118,59 @@
 
         if(woodfield.length !==0 ){
             var element =  document.getElementById("Woodfield");
-            element.className += "newstyle";
+            element.className += "newStyle";
         }
         if(country.length !== 0 ){
             var element =  document.getElementById("Country");
-            element.className += "newstyle";
+            element.className += "newStyle";
         }
         if(fernandez.length !==0){
             var element =  document.getElementById("Fernandez");
-            element.className += "newstyle";   
+            element.className += "newStyle";   
         }
 
           // uncomment for fountain of the bell 
         if(fountain.length !==0){
           var element =  document.getElementById("Fountain");
-            element.className += "newstyle";   
+            element.className += "newStyle";   
         }
         if(hazel.length !==0){
             var element =  document.getElementById("Hazel");
-            element.className += "newstyle";   
+            element.className += "newStyle";   
         }
 
         if(lamoine.length !==0){
            var element =  document.getElementById("Lamoine");
-           element.className += "newstyle";   
+           element.className += "newStyle";   
        }
        if(lefty.length !==0){
            var element =  document.getElementById("Lefty");
-           element.className += "newstyle";   
+           element.className += "newStyle";   
        }
        if(rotary.length !==0){
            var element =  document.getElementById("Rotary");
-           element.className += "newstyle";   
+           element.className += "newStyle";   
        }
        if(pinoleValleyPark.length !==0){
-           var element =  document.getElementById("Rotary");
-           element.className += "newstyle";   
+           var element =  document.getElementById("PVP");
+           element.className += "newStyle";   
        }
        if(playground.length !==0){
            var element =  document.getElementById("Playground");
-           element.className += "newstyle";   
+           element.className += "newStyle";   
        }
        if(starbucksRichmondParkway.length !==0){
            var element =  document.getElementById("Starbucks_Richmond");
-           element.className += "newstyle";   
+           element.className += "newStyle";   
        }
        if(starbucksDamRoad.length !==0){
            var element =  document.getElementById("Starbucks_SanPablo");
-           element.className += "newstyle";   
+           element.className += "newStyle";   
        }
 
        if(pointPinole.length !==0){
            var element =  document.getElementById("Pinole_Point");
-           element.className += "newstyle";   
+           element.className += "newStyle";   
        }
 
    }
