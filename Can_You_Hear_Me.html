@@ -12,6 +12,7 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="styleSheet.css" />
 <link rel="shortcut icon" type="image/png" href="/img/icon72.png"/>
 <link rel="shortcut icon" type="image/png" href="/img/icon72.png"/>
@@ -36,15 +37,33 @@
 <body>
 <!-- Start Header -->
   <div class="row align-items-center">
-    <div class="col-8">
-      <div class="ralogo"><a href="https://epicpancake.com/"><img src="../img/ep-logo-green.svg"></a></div>
+      <div class="col-8">
+        <div class="ralogo">
+          <a href="https://epicpancake.com/"
+            ><img src="../img/ep-logo-green.svg"
+          /></a>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="dropdown">
+          <button
+            style="float: right"
+            class="btn btn-primary dropdown-toggle racopy radonate"
+            type="button"
+            data-toggle="dropdown"
+          >
+          <i class="fas fa-bars"></i>
+        </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="Welcome.html">Welcome</a>
+            <a class="dropdown-item" href="exRaidList.html">Ex Gyms</a>
+            <a class="dropdown-item" href="https://www.paypal.me/theepicpancake">Donate</a>
+          </div>
+        </div>
+      </div>   
+      </div>
     </div>
-    <div class="col-4">
-    <div class="form-group">
-        <a class="btn btn-primary racopy radonate" href="https://www.paypal.me/theepicpancake" role="button" target="_blank">Donate</a>
-    </div>
-    </div>
-  </div>
+
 <!-- Start Title Area -->
 <header>
     <h1>Can You Hear There (Woodfield)</h1>
