@@ -3,18 +3,19 @@
 <head>
 
 
-    <meta charset="UTF-8">
-    <title>Raid Assistant - Ex Raid Gyms</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="noindex, nofollow">
-    <meta name="theme-color" content="#77828C">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#77828C">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="styleSheet.css" />
+  <meta charset="UTF-8">
+  <title>Raid Assistant - Ex Raid Gyms</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#77828C">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#77828C">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="styleSheet.css" />
 	<link rel="shortcut icon" type="image/png" href="/img/icon72.png"/>
 	<link rel="shortcut icon" type="image/png" href="/img/icon72.png"/>
 	<link rel="apple-touch-icon" sizes="57x57" href="/img/icon57.png">
@@ -56,19 +57,20 @@
           <i class="fas fa-bars"></i>
         </button>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="Welcome.html">Welcome</a>
-            <a class="dropdown-item" href="exRaidList.html">Ex Gyms</a>
             <a class="dropdown-item" href="https://www.paypal.me/theepicpancake">Donate</a>
+            <a class="dropdown-item" href="exRaidList.html">Ex Gyms</a>
+            <a class="dropdown-item" href="index.html">Home</a>
+            <a class="dropdown-item" href="Welcome.html">Welcome</a>
           </div>
         </div>
       </div>   
     </div>
-  </div>
 
 <!-- Start Title Area -->
 <header>
     <h1>Ex Raid Gyms</h1>
 </header>
+<p id="fetchingData" style="color: #fff">Fetching Data...</p>
 <!-- Start List -->
 <ul id="location-list" class="w3-container">
     <li><a href="Can_You_Hear_Me.html" id="Woodfield">Can You Hear There (Woodfield)</a></li>
@@ -108,6 +110,7 @@
          simpleSheet: true } )
     }
     function showInfo(data, tabletop) {
+        document.getElementById("fetchingData").innerHTML = "";      
         var  woodfield = tabletop.sheets("Can You Hear There, Hercules (Lupine Road, Park)").toArray();
         var country = tabletop.sheets("Country Club Vist Park Dedication Plaque, Richmond").toArray();
         var fernandez = tabletop.sheets("Ever Burning Flame, Pinole (Fernandez Park)").toArray();

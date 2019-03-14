@@ -1,52 +1,846 @@
-
-
-
-
-
-
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-
-  <title> this is a tesst</title>
-
-  
-
-  </style>
- <!--  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
-
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
- -->
-</head>
-
-<body>
-
-<script type="text/javascript">
-  
-
- var abcFromUrl = Request.QueryString["abc"];
-
-console.log(abcFromUrl);
+<meta charset="UTF-8">
+<title>Raid Assistant</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#77828C">
+<meta name="apple-mobile-web-app-status-bar-style" content="#77828C">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+<script>
+$(document).ready(function() {
+	$('.s2').select2();
+	//Fix the select2 unclear search fields
+	$(".select2").click(function (e) {
+		$(".select2-search__field").attr("placeholder","Search...");
+	});
+});
+$(function () {
+		$('[data-toggle="tooltip"]').tooltip({trigger: 'focus', placement: 'left', delay:{hide:1500}})
+})
 </script>
+<style>
+	body{font-family: 'Roboto', sans-serif;font-size: 1em;background:#1C2630; padding: 1.25rem;}
+	input, button, submit { border:none; background:none; }
+	a {color:#48E08D;}
+	/* overrides */
+	.btn-primary{border:none;}
+	.btn-primary:hover, .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle, .btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus, .btn-primary.focus, .btn-primary:focus {background: #48CFE0;}
+	.bs-tooltip-auto[x-placement^=right] .arrow::before, .bs-tooltip-right .arrow::before {display: none;}
+	.tooltip{font-family: 'Roboto', sans-serif; !important}
+	.ralogo {margin: 1.25rem 0 1.5rem 0; max-width:14rem;}
+	label {color:#6c7d8e;}
+	.select2-container .select2-selection--single{height:auto;}
+	.select2-container .select2-selection--single .select2-selection__rendered, .ratime, .racopy {padding: 1rem .75rem; line-height: 28px; min-height:60px;border-radius: .25rem;}
+	.select2-container--default .select2-selection--single .select2-selection__arrow {top: 16px;right: 6px;}
+	.racopy{background: linear-gradient(135deg, #48E08D 0%, #48CFE0 100%); font-weight: bold; width:100%; margin-top: 1.5rem;}
+	.radonate {max-width:8rem; float:right; margin-top:0;}
+	.tooltip-inner{background: #1C2630; font-weight: bold; width:100%;padding: 0.6rem .75rem; line-height: 28px; border-radius: 100px; right:20px; position: relative;}
+	/* .select2-container--default .select2-results>.select2-results__options, .select2-search--dropdown {background:#0f171f;color:white;}
+	.select2-container--default .select2-results__option--highlighted[aria-selected] {background: #F13E2D;}*/
+	.select2-container--default .select2-selection--single,.select2-dropdown,.form-control {border:none;}
+</style>
+<link rel="shortcut icon" type="image/png" href="/img/icon72.png"/>
+<link rel="shortcut icon" type="image/png" href="/img/icon72.png"/>
+	<!-- To support old sizes -->
+<link rel="apple-touch-icon" sizes="57x57" href="/img/icon57.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/img/icon72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/img/icon114.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/img/icon144.png">
 
-  <p> my amazing website</p>
+<!– To support new sizes –>
+<link rel="apple-touch-icon" sizes="60×60" href="/img/icon60.png">
+<link rel="apple-touch-icon" sizes="76×76" href="/img/icon76.png">
+<link rel="apple-touch-icon" sizes="120×120" href="/img/icon120.png">
+<link rel="apple-touch-icon" sizes="152×152" href="/img/icon152.png">
+<link rel="apple-touch-icon" sizes="180×180" href="/img/icon180.png">
 
-
-
- 
-
-
-
+<!– To support Android –>
+<link rel="icon" sizes="192×192" href="/img/icon192.png">
+<link rel="icon" sizes="128×128" href="/img/icon128.png">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-117947692-1"></script>
+<script>
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+ gtag('config', 'UA-117947692-1');
+</script>
+</head>
+<body>
+  <div class="row align-items-center">
+    <div class="col-8">
+      <div class="ralogo"><img src="img/ep-logo-green.svg"></div>
+    </div>
+    <div class="col-4">
+	<div class="form-group">
+		<a class="btn btn-primary racopy radonate" href="https://www.paypal.me/theepicpancake" role="button" target="_blank">Donate</a>
+	</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="raboss">Raid Boss</label>
+    <select class="raboss form-control s2" id="s2raboss">
+		<option value="">-</option>
+		<option value="Level 1 TBD">Level 1 TBD</option>
+		<option value="Level 2 TBD">Level 2 TBD</option>
+		<option value="Level 3 TBD">Level 3 TBD</option>
+		<option value="Level 4 TBD">Level 4 TBD</option>
+		<option value="Level 5 TBD">Level 5 TBD</option>		
+		<option value="Abomasnow">Abomasnow</option>
+		<option value="Abra">Abra</option>
+		<option value="Absol">Absol</option>
+		<option value="Aerodactyl">Aerodactyl</option>
+		<option value="Aggron">Aggron</option>
+		<option value="Aipom">Aipom</option>
+		<option value="Alakazam">Alakazam</option>
+		<option value="Altaria">Altaria</option>
+		<option value="Ambipom">Ambipom</option>
+		<option value="Ampharos">Ampharos</option>
+		<option value="Anorith">Anorith</option>
+		<option value="Arbok">Arbok</option>
+		<option value="Arcanine">Arcanine</option>
+		<option value="Arceus">Arceus</option>
+		<option value="Ariados">Ariados</option>
+		<option value="Armaldo">Armaldo</option>
+		<option value="Aron">Aron</option>
+		<option value="Articuno">Articuno</option>
+		<option value="Azelf">Azelf</option>
+		<option value="Azumarill">Azumarill</option>
+		<option value="Azurill">Azurill</option>
+		<option value="Bagon">Bagon</option>
+		<option value="Baltoy">Baltoy</option>
+		<option value="Banette">Banette</option>
+		<option value="Barboach">Barboach</option>
+		<option value="Bastiodon">Bastiodon</option>
+		<option value="Bayleef">Bayleef</option>
+		<option value="Beautifly">Beautifly</option>
+		<option value="Beedrill">Beedrill</option>
+		<option value="Beldum">Beldum</option>
+		<option value="Bellossom">Bellossom</option>
+		<option value="Bellsprout">Bellsprout</option>
+		<option value="Bibarel">Bibarel</option>
+		<option value="Bidoof">Bidoof</option>
+		<option value="Blastoise">Blastoise</option>
+		<option value="Blaziken">Blaziken</option>
+		<option value="Blissey">Blissey</option>
+		<option value="Bonsly">Bonsly</option>
+		<option value="Breloom">Breloom</option>
+		<option value="Bronzong">Bronzong</option>
+		<option value="Bronzor">Bronzor</option>
+		<option value="Budew">Budew</option>
+		<option value="Buizel">Buizel</option>
+		<option value="Bulbasaur">Bulbasaur</option>
+		<option value="Buneary">Buneary</option>
+		<option value="Burmy">Burmy</option>
+		<option value="Butterfree">Butterfree</option>
+		<option value="Cacnea">Cacnea</option>
+		<option value="Cacturne">Cacturne</option>
+		<option value="Camerupt">Camerupt</option>
+		<option value="Carnivine">Carnivine</option>
+		<option value="Carvanha">Carvanha</option>
+		<option value="Cascoon">Cascoon</option>
+		<option value="Castform">Castform</option>
+		<option value="Caterpie">Caterpie</option>
+		<option value="Celebi">Celebi</option>
+		<option value="Chansey">Chansey</option>
+		<option value="Charizard">Charizard</option>
+		<option value="Charmander">Charmander</option>
+		<option value="Charmeleon">Charmeleon</option>
+		<option value="Chatot">Chatot</option>
+		<option value="Cherrim">Cherrim</option>
+		<option value="Cherubi">Cherubi</option>
+		<option value="Chikorita">Chikorita</option>
+		<option value="Chimchar">Chimchar</option>
+		<option value="Chimecho">Chimecho</option>
+		<option value="Chinchou">Chinchou</option>
+		<option value="Chingling">Chingling</option>
+		<option value="Clamperl">Clamperl</option>
+		<option value="Claydol">Claydol</option>
+		<option value="Clefable">Clefable</option>
+		<option value="Clefairy">Clefairy</option>
+		<option value="Cleffa">Cleffa</option>
+		<option value="Cloyster">Cloyster</option>
+		<option value="Combee">Combee</option>
+		<option value="Combusken">Combusken</option>
+		<option value="Corphish">Corphish</option>
+		<option value="Corsola">Corsola</option>
+		<option value="Cradily">Cradily</option>
+		<option value="Cranidos">Cranidos</option>
+		<option value="Crawdaunt">Crawdaunt</option>
+		<option value="Cresselia">Cresselia</option>
+		<option value="Croagunk">Croagunk</option>
+		<option value="Crobat">Crobat</option>
+		<option value="Croconaw">Croconaw</option>
+		<option value="Cubone">Cubone</option>
+		<option value="Cyndaquil">Cyndaquil</option>
+		<option value="Darkrai">Darkrai</option>
+		<option value="Delcatty">Delcatty</option>
+		<option value="Delibird">Delibird</option>
+		<option value="Deoxys">Deoxys</option>
+		<option value="Dewgong">Dewgong</option>
+		<option value="Dialga">Dialga</option>
+		<option value="Diglett">Diglett</option>
+		<option value="Ditto">Ditto</option>
+		<option value="Dodrio">Dodrio</option>
+		<option value="Doduo">Doduo</option>
+		<option value="Donphan">Donphan</option>
+		<option value="Dragonair">Dragonair</option>
+		<option value="Dragonite">Dragonite</option>
+		<option value="Drapion">Drapion</option>
+		<option value="Dratini">Dratini</option>
+		<option value="Drifblim">Drifblim</option>
+		<option value="Drifloon">Drifloon</option>
+		<option value="Drowzee">Drowzee</option>
+		<option value="Dugtrio">Dugtrio</option>
+		<option value="Dunsparce">Dunsparce</option>
+		<option value="Dusclops">Dusclops</option>
+		<option value="Dusknoir">Dusknoir</option>
+		<option value="Duskull">Duskull</option>
+		<option value="Dustox">Dustox</option>
+		<option value="Eevee">Eevee</option>
+		<option value="Ekans">Ekans</option>
+		<option value="Electabuzz">Electabuzz</option>
+		<option value="Electivire">Electivire</option>
+		<option value="Electrike">Electrike</option>
+		<option value="Electrode">Electrode</option>
+		<option value="Elekid">Elekid</option>
+		<option value="Empoleon">Empoleon</option>
+		<option value="Entei">Entei</option>
+		<option value="Espeon">Espeon</option>
+		<option value="Exeggcute">Exeggcute</option>
+		<option value="Alolan Exeggutor">Alolan Exeggutor</option>
+		<option value="Exeggutor">Exeggutor</option>
+		<option value="Exploud">Exploud</option>
+		<option value="Farfetch'd">Farfetch'd</option>
+		<option value="Fearow">Fearow</option>
+		<option value="Feebas">Feebas</option>
+		<option value="Feraligatr">Feraligatr</option>
+		<option value="Finneon">Finneon</option>
+		<option value="Flaaffy">Flaaffy</option>
+		<option value="Flareon">Flareon</option>
+		<option value="Floatzel">Floatzel</option>
+		<option value="Flygon">Flygon</option>
+		<option value="Forretress">Forretress</option>
+		<option value="Froslass">Froslass</option>
+		<option value="Furret">Furret</option>
+		<option value="Gabite">Gabite</option>
+		<option value="Gallade">Gallade</option>
+		<option value="Garchomp">Garchomp</option>
+		<option value="Gardevoir">Gardevoir</option>
+		<option value="Gastly">Gastly</option>
+		<option value="Gastrodon">Gastrodon</option>
+		<option value="Gengar">Gengar</option>
+		<option value="Geodude">Geodude</option>
+		<option value="Gible">Gible</option>
+		<option value="Girafarig">Girafarig</option>
+		<option value="Giratina">Giratina</option>
+		<option value="Glaceon">Glaceon</option>
+		<option value="Glalie">Glalie</option>
+		<option value="Glameow">Glameow</option>
+		<option value="Gligar">Gligar</option>
+		<option value="Gliscor">Gliscor</option>
+		<option value="Gloom">Gloom</option>
+		<option value="Golbat">Golbat</option>
+		<option value="Goldeen">Goldeen</option>
+		<option value="Golduck">Golduck</option>
+		<option value="Golem">Golem</option>
+		<option value="Gorebyss">Gorebyss</option>
+		<option value="Granbull">Granbull</option>
+		<option value="Graveler">Graveler</option>
+		<option value="Grimer">Grimer</option>
+		<option value="Grotle">Grotle</option>
+		<option value="Groudon">Groudon</option>
+		<option value="Grovyle">Grovyle</option>
+		<option value="Growlithe">Growlithe</option>
+		<option value="Grumpig">Grumpig</option>
+		<option value="Gulpin">Gulpin</option>
+		<option value="Gyarados">Gyarados</option>
+		<option value="Happiny">Happiny</option>
+		<option value="Hariyama">Hariyama</option>
+		<option value="Haunter">Haunter</option>
+		<option value="Heatran">Heatran</option>
+		<option value="Heracross">Heracross</option>
+		<option value="Hippopotas">Hippopotas</option>
+		<option value="Hippowdon">Hippowdon</option>
+		<option value="Hitmonchan">Hitmonchan</option>
+		<option value="Hitmonlee">Hitmonlee</option>
+		<option value="Hitmontop">Hitmontop</option>
+		<option value="Ho-Oh">Ho-Oh</option>
+		<option value="Honchkrow">Honchkrow</option>
+		<option value="Hoothoot">Hoothoot</option>
+		<option value="Hoppip">Hoppip</option>
+		<option value="Horsea">Horsea</option>
+		<option value="Houndoom">Houndoom</option>
+		<option value="Houndour">Houndour</option>
+		<option value="Huntail">Huntail</option>
+		<option value="Hypno">Hypno</option>
+		<option value="Igglybuff">Igglybuff</option>
+		<option value="Illumise">Illumise</option>
+		<option value="Infernape">Infernape</option>
+		<option value="Ivysaur">Ivysaur</option>
+		<option value="Jigglypuff">Jigglypuff</option>
+		<option value="Jirachi">Jirachi</option>
+		<option value="Jolteon">Jolteon</option>
+		<option value="Jumpluff">Jumpluff</option>
+		<option value="Jynx">Jynx</option>
+		<option value="Kabuto">Kabuto</option>
+		<option value="Kabutops">Kabutops</option>
+		<option value="Kadabra">Kadabra</option>
+		<option value="Kakuna">Kakuna</option>
+		<option value="Kangaskhan">Kangaskhan</option>
+		<option value="Kecleon">Kecleon</option>
+		<option value="Kingdra">Kingdra</option>
+		<option value="Kingler">Kingler</option>
+		<option value="Kirlia">Kirlia</option>
+		<option value="Koffing">Koffing</option>
+		<option value="Krabby">Krabby</option>
+		<option value="Kricketot">Kricketot</option>
+		<option value="Kricketune">Kricketune</option>
+		<option value="Kyogre">Kyogre</option>
+		<option value="Lairon">Lairon</option>
+		<option value="Lanturn">Lanturn</option>
+		<option value="Lapras">Lapras</option>
+		<option value="Larvitar">Larvitar</option>
+		<option value="Latias">Latias</option>
+		<option value="Latios">Latios</option>
+		<option value="Leafeon">Leafeon</option>
+		<option value="Ledian">Ledian</option>
+		<option value="Ledyba">Ledyba</option>
+		<option value="Lickilicky">Lickilicky</option>
+		<option value="Lickitung">Lickitung</option>
+		<option value="Lileep">Lileep</option>
+		<option value="Linoone">Linoone</option>
+		<option value="Lombre">Lombre</option>
+		<option value="Lopunny">Lopunny</option>
+		<option value="Lotad">Lotad</option>
+		<option value="Loudred">Loudred</option>
+		<option value="Lucario">Lucario</option>
+		<option value="Ludicolo">Ludicolo</option>
+		<option value="Lugia">Lugia</option>
+		<option value="Lumineon">Lumineon</option>
+		<option value="Lunatone">Lunatone</option>
+		<option value="Luvdisc">Luvdisc</option>
+		<option value="Luxio">Luxio</option>
+		<option value="Luxray">Luxray</option>
+		<option value="Machamp">Machamp</option>
+		<option value="Machoke">Machoke</option>
+		<option value="Machop">Machop</option>
+		<option value="Magby">Magby</option>
+		<option value="Magcargo">Magcargo</option>
+		<option value="Magikarp">Magikarp</option>
+		<option value="Magmar">Magmar</option>
+		<option value="Magmortar">Magmortar</option>
+		<option value="Magnemite">Magnemite</option>
+		<option value="Magneton">Magneton</option>
+		<option value="Magnezone">Magnezone</option>
+		<option value="Makuhita">Makuhita</option>
+		<option value="Mamoswine">Mamoswine</option>
+		<option value="Manaphy">Manaphy</option>
+		<option value="Manectric">Manectric</option>
+		<option value="Mankey">Mankey</option>
+		<option value="Mantine">Mantine</option>
+		<option value="Mantyke">Mantyke</option>
+		<option value="Mareep">Mareep</option>
+		<option value="Marill">Marill</option>
+		<option value="Alolan Marowak">Alolan Marowak</option>
+		<option value="Marowak">Marowak</option>
+		<option value="Marshtomp">Marshtomp</option>
+		<option value="Masquerain">Masquerain</option>
+		<option value="Mawile">Mawile</option>
+		<option value="Medicham">Medicham</option>
+		<option value="Meditite">Meditite</option>
+		<option value="Meganium">Meganium</option>
+		<option value="Meganium">Meltan</option>
+		<option value="Meganium">Melmetal</option>
+		<option value="Meowth">Meowth</option>
+		<option value="Mesprit">Mesprit</option>
+		<option value="Metagross">Metagross</option>
+		<option value="Metang">Metang</option>
+		<option value="Metapod">Metapod</option>
+		<option value="Mew">Mew</option>
+		<option value="Mewtwo">Mewtwo</option>
+		<option value="Mightyena">Mightyena</option>
+		<option value="Milotic">Milotic</option>
+		<option value="Miltank">Miltank</option>
+		<option value="Mime Jr.">Mime Jr.</option>
+		<option value="Minun">Minun</option>
+		<option value="Misdreavus">Misdreavus</option>
+		<option value="Mismagius">Mismagius</option>
+		<option value="Moltres">Moltres</option>
+		<option value="Monferno">Monferno</option>
+		<option value="Mothim">Mothim</option>
+		<option value="Mr. Mime">Mr. Mime</option>
+		<option value="Mudkip">Mudkip</option>
+		<option value="Muk">Muk</option>
+		<option value="Munchlax">Munchlax</option>
+		<option value="Murkrow">Murkrow</option>
+		<option value="Natu">Natu</option>
+		<option value="Nidoking">Nidoking</option>
+		<option value="Nidoqueen">Nidoqueen</option>
+		<option value="Nidoran♀">Nidoran♀</option>
+		<option value="Nidoran♂">Nidoran♂</option>
+		<option value="Nidorina">Nidorina</option>
+		<option value="Nidorino">Nidorino</option>
+		<option value="Nincada">Nincada</option>
+		<option value="Ninetales">Ninetales</option>
+		<option value="Ninjask">Ninjask</option>
+		<option value="Noctowl">Noctowl</option>
+		<option value="Nosepass">Nosepass</option>
+		<option value="Numel">Numel</option>
+		<option value="Nuzleaf">Nuzleaf</option>
+		<option value="Octillery">Octillery</option>
+		<option value="Oddish">Oddish</option>
+		<option value="Omanyte">Omanyte</option>
+		<option value="Omastar">Omastar</option>
+		<option value="Onix">Onix</option>
+		<option value="Pachirisu">Pachirisu</option>
+		<option value="Palkia">Palkia</option>
+		<option value="Paras">Paras</option>
+		<option value="Parasect">Parasect</option>
+		<option value="Pelipper">Pelipper</option>
+		<option value="Persian">Persian</option>
+		<option value="Phanpy">Phanpy</option>
+		<option value="Phione">Phione</option>
+		<option value="Pichu">Pichu</option>
+		<option value="Pidgeot">Pidgeot</option>
+		<option value="Pidgeotto">Pidgeotto</option>
+		<option value="Pidgey">Pidgey</option>
+		<option value="Pikachu">Pikachu</option>
+		<option value="Piloswine">Piloswine</option>
+		<option value="Pineco">Pineco</option>
+		<option value="Pinsir">Pinsir</option>
+		<option value="Piplup">Piplup</option>
+		<option value="Plusle">Plusle</option>
+		<option value="Politoed">Politoed</option>
+		<option value="Poliwag">Poliwag</option>
+		<option value="Poliwhirl">Poliwhirl</option>
+		<option value="Poliwrath">Poliwrath</option>
+		<option value="Ponyta">Ponyta</option>
+		<option value="Poochyena">Poochyena</option>
+		<option value="Porygon">Porygon</option>
+		<option value="Porygon-Z">Porygon-Z</option>
+		<option value="Porygon2">Porygon2</option>
+		<option value="Primeape">Primeape</option>
+		<option value="Prinplup">Prinplup</option>
+		<option value="Probopass">Probopass</option>
+		<option value="Psyduck">Psyduck</option>
+		<option value="Pupitar">Pupitar</option>
+		<option value="Purugly">Purugly</option>
+		<option value="Quagsire">Quagsire</option>
+		<option value="Quilava">Quilava</option>
+		<option value="Qwilfish">Qwilfish</option>
+		<option value="Alolan Raichu">Alolan Raichu</option>
+		<option value="Raichu">Raichu</option>
+		<option value="Raikou">Raikou</option>
+		<option value="Ralts">Ralts</option>
+		<option value="Rampardos">Rampardos</option>
+		<option value="Rapidash">Rapidash</option>
+		<option value="Raticate">Raticate</option>
+		<option value="Rattata">Rattata</option>
+		<option value="Rayquaza">Rayquaza</option>
+		<option value="Regice">Regice</option>
+		<option value="Regigigas">Regigigas</option>
+		<option value="Regirock">Regirock</option>
+		<option value="Registeel">Registeel</option>
+		<option value="Relicanth">Relicanth</option>
+		<option value="Remoraid">Remoraid</option>
+		<option value="Rhydon">Rhydon</option>
+		<option value="Rhyhorn">Rhyhorn</option>
+		<option value="Rhyperior">Rhyperior</option>
+		<option value="Riolu">Riolu</option>
+		<option value="Roselia">Roselia</option>
+		<option value="Roserade">Roserade</option>
+		<option value="Rotom">Rotom</option>
+		<option value="Sableye">Sableye</option>
+		<option value="Salamence">Salamence</option>
+		<option value="Sandshrew">Sandshrew</option>
+		<option value="Sandslash">Sandslash</option>
+		<option value="Sceptile">Sceptile</option>
+		<option value="Scizor">Scizor</option>
+		<option value="Scyther">Scyther</option>
+		<option value="Seadra">Seadra</option>
+		<option value="Seaking">Seaking</option>
+		<option value="Sealeo">Sealeo</option>
+		<option value="Seedot">Seedot</option>
+		<option value="Seel">Seel</option>
+		<option value="Sentret">Sentret</option>
+		<option value="Seviper">Seviper</option>
+		<option value="Sharpedo">Sharpedo</option>
+		<option value="Shaymin">Shaymin</option>
+		<option value="Shedinja">Shedinja</option>
+		<option value="Shelgon">Shelgon</option>
+		<option value="Shellder">Shellder</option>
+		<option value="Shellos">Shellos</option>
+		<option value="Shieldon">Shieldon</option>
+		<option value="Shiftry">Shiftry</option>
+		<option value="Shinx">Shinx</option>
+		<option value="Shroomish">Shroomish</option>
+		<option value="Shuckle">Shuckle</option>
+		<option value="Shuppet">Shuppet</option>
+		<option value="Silcoon">Silcoon</option>
+		<option value="Skarmory">Skarmory</option>
+		<option value="Skiploom">Skiploom</option>
+		<option value="Skitty">Skitty</option>
+		<option value="Skorupi">Skorupi</option>
+		<option value="Skuntank">Skuntank</option>
+		<option value="Slaking">Slaking</option>
+		<option value="Slakoth">Slakoth</option>
+		<option value="Slowbro">Slowbro</option>
+		<option value="Slowking">Slowking</option>
+		<option value="Slowpoke">Slowpoke</option>
+		<option value="Slugma">Slugma</option>
+		<option value="Smeargle">Smeargle</option>
+		<option value="Smoochum">Smoochum</option>
+		<option value="Sneasel">Sneasel</option>
+		<option value="Snorlax">Snorlax</option>
+		<option value="Snorunt">Snorunt</option>
+		<option value="Snover">Snover</option>
+		<option value="Snubbull">Snubbull</option>
+		<option value="Solrock">Solrock</option>
+		<option value="Spearow">Spearow</option>
+		<option value="Spheal">Spheal</option>
+		<option value="Spinarak">Spinarak</option>
+		<option value="Spinda">Spinda</option>
+		<option value="Spiritomb">Spiritomb</option>
+		<option value="Spoink">Spoink</option>
+		<option value="Squirtle">Squirtle</option>
+		<option value="Stantler">Stantler</option>
+		<option value="Staraptor">Staraptor</option>
+		<option value="Staravia">Staravia</option>
+		<option value="Starly">Starly</option>
+		<option value="Starmie">Starmie</option>
+		<option value="Staryu">Staryu</option>
+		<option value="Steelix">Steelix</option>
+		<option value="Stunky">Stunky</option>
+		<option value="Sudowoodo">Sudowoodo</option>
+		<option value="Suicune">Suicune</option>
+		<option value="Sunflora">Sunflora</option>
+		<option value="Sunkern">Sunkern</option>
+		<option value="Surskit">Surskit</option>
+		<option value="Swablu">Swablu</option>
+		<option value="Swalot">Swalot</option>
+		<option value="Swampert">Swampert</option>
+		<option value="Swellow">Swellow</option>
+		<option value="Swinub">Swinub</option>
+		<option value="Taillow">Taillow</option>
+		<option value="Tangela">Tangela</option>
+		<option value="Tangrowth">Tangrowth</option>
+		<option value="Tauros">Tauros</option>
+		<option value="Teddiursa">Teddiursa</option>
+		<option value="Tentacool">Tentacool</option>
+		<option value="Tentacruel">Tentacruel</option>
+		<option value="Togekiss">Togekiss</option>
+		<option value="Togepi">Togepi</option>
+		<option value="Togetic">Togetic</option>
+		<option value="Torchic">Torchic</option>
+		<option value="Torkoal">Torkoal</option>
+		<option value="Torterra">Torterra</option>
+		<option value="Totodile">Totodile</option>
+		<option value="Toxicroak">Toxicroak</option>
+		<option value="Trapinch">Trapinch</option>
+		<option value="Treecko">Treecko</option>
+		<option value="Tropius">Tropius</option>
+		<option value="Turtwig">Turtwig</option>
+		<option value="Typhlosion">Typhlosion</option>
+		<option value="Tyranitar">Tyranitar</option>
+		<option value="Tyrogue">Tyrogue</option>
+		<option value="Umbreon">Umbreon</option>
+		<option value="Unown">Unown</option>
+		<option value="Ursaring">Ursaring</option>
+		<option value="Uxie">Uxie</option>
+		<option value="Vaporeon">Vaporeon</option>
+		<option value="Venomoth">Venomoth</option>
+		<option value="Venonat">Venonat</option>
+		<option value="Venusaur">Venusaur</option>
+		<option value="Vespiquen">Vespiquen</option>
+		<option value="Vibrava">Vibrava</option>
+		<option value="Victreebel">Victreebel</option>
+		<option value="Vigoroth">Vigoroth</option>
+		<option value="Vileplume">Vileplume</option>
+		<option value="Volbeat">Volbeat</option>
+		<option value="Voltorb">Voltorb</option>
+		<option value="Vulpix">Vulpix</option>
+		<option value="Wailmer">Wailmer</option>
+		<option value="Wailord">Wailord</option>
+		<option value="Walrein">Walrein</option>
+		<option value="Wartortle">Wartortle</option>
+		<option value="Weavile">Weavile</option>
+		<option value="Weedle">Weedle</option>
+		<option value="Weepinbell">Weepinbell</option>
+		<option value="Weezing">Weezing</option>
+		<option value="Whiscash">Whiscash</option>
+		<option value="Whismur">Whismur</option>
+		<option value="Wigglytuff">Wigglytuff</option>
+		<option value="Wingull">Wingull</option>
+		<option value="Wobbuffet">Wobbuffet</option>
+		<option value="Wooper">Wooper</option>
+		<option value="Wormadam">Wormadam</option>
+		<option value="Wurmple">Wurmple</option>
+		<option value="Wynaut">Wynaut</option>
+		<option value="Xatu">Xatu</option>
+		<option value="Yanma">Yanma</option>
+		<option value="Yanmega">Yanmega</option>
+		<option value="Zangoose">Zangoose</option>
+		<option value="Zapdos">Zapdos</option>
+		<option value="Zigzagoon">Zigzagoon</option>
+		<option value="Zubat">Zubat</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="ragym">Gym</label>
+    <select class="ragym form-control s2">
+		<option value="">-</option>
+		<optgroup label="Crockett">Crockett</option>
+		<option value="Iron Boot|38.05559329825077,-122.21723556518556">Iron Boot</option>
+		<option value="Rithet Park Fountain|38.055610194299135,-122.21920967102052">Rithet Park Fountain</option>
+		<option value="St Rose Rainbow|38.055610194299135,-122.21920967102052">St Rose Rainbow</option>
+		<option value="William Rushton Mural|38.055610194299135,-122.21920967102052">William Rushton Mural</option>
+		<option value="US Post Office|38.055610194299135,-122.21920967102052">US Post Office</option>
+		<option value="Old Bell Systems Building|38.05257729113295,-122.21358776092531">Old Bell Systems Building</option>
+		<option value="The Nantucket|38.05257729113295,-122.21358776092531">The Nantucket</option>
+		<option value="Neptune’s Bounty Fountain|38.05257729113295,-122.21358776092531">Neptune’s Bounty Fountain</option>
+		<option value="View of Al Zampa Memorial Bridge|38.05257729113295,-122.21358776092531">View of Al Zampa Memorial Bridge</option>
+		<optgroup label="Rodeo">Rodeo</option>
+		<option value="Elvis In Rodeo|38.033767,-122.267322">Elvis In Rodeo</option>
+		<option value="Giant Metal Fish and Arrow|38.038145,-122.268486">Giant Metal Fish and Arrow</option>
+		<option value="Lefty Gomez Plaque (EX)|38.031014,-122.267087">Lefty Gomez Plaque (EX)</option>
+		<option value="Lone Tree Point|38.037821,-122.269665">Lone Tree Point</option>
+		<option value="Memorial Plaque (Lefty)|38.031009,-122.266716">Memorial Plaque (Lefty)</option>
+		<option value="Northshore Vietnamese Alliance Chapel|38.036273,-122.266718">Northshore Vietnamese Alliance Chapel</option>
+		<option value="Old Rodeo Well|38.035075,-122.272000">Old Rodeo Well</option>
+		<option value="Rodeo Town Sign|38.027193,-122.265902">Rodeo Town Sign</option>
+		<option value="St. Patrick Catholic Church|38.028877,-122.263142">St. Patrick Catholic Church</option>
+		<optgroup label="Hercules">Hercules</option>
+		<option value="Can You Hear There (Woodfield) (EX)|38.007394,-122.251620">Can You Hear There (Woodfield) (EX)</option>
+		<option value="Civic Arts Building (Leila)|38.016135,-122.290736">Civic Arts Building (Leila)</option>
+		<option value="Duck Pond Park|38.015444,-122.283023">Duck Pond Park</option>
+		<option value="Hercules City Mural|38.011534,-122.272916">Hercules City Mural</option>
+		<option value="Hercules Civic Center|38.010289,-122.266257">Hercules Civic Center</option>
+		<option value="Hercules Community Center|37.999369,-122.248391">Hercules Community Center</option>
+		<option value="Hercules Market Hall|38.014457,-122.272301">Hercules Market Hall</option>
+		<option value="Lamp One (Victoria)|38.027197,-122.271594">Lamp One (Victoria)</option>
+		<option value="Loving Memory of Helen and Tarvin (Civic Center)|38.010752,-122.265679">Loving Memory of Helen and Tarvin (Civic Center)</option>
+		<option value="Obelisk Two (Victoria)|38.027942,-122.272332">Obelisk Two (Victoria)</option>
+		<option value="Rodeo Hercules Fire Department|38.004165,-122.261830">Rodeo Hercules Fire Department</option>
+		<option value="Playground (Refugio) (EX)|38.007269,-122.267192">Playground (Refugio) (EX)</option>
+		<option value="T.H.E. S.P.O.T.|37.998529,-122.248437">T.H.E. S.P.O.T.</option>
+		<option value="Valley Bible Church|38.013039,-122.257626">Valley Bible Church</option>
+		<option value="Victoria by The Bay NE Pillar|38.023410,-122.268869">Victoria by The Bay NE Pillar</option>
+		<option value="Vita Course Path|38.006489,-122.267294">Vita Course Path</option>
+		<option value="VitaCourse Path Exercise Station|38.003049,-122.258475">VitaCourse Path Exercise Station</option>
+		<optgroup label="Pinole">Pinole</option>
+		<option value="Art at Pinole Kaiser|37.998656,-122.286291">Art at Pinole Kaiser</option>
+		<option value="Cats in Window Mural (Pet Hospital)|38.004364,-122.300996">Cats in Window Mural (Pet Hospital)</option>
+		<option value="De Anza Expedition 1775-1776 (Library)|37.991988,-122.284778">De Anza Expedition 1775-1776 (Library)</option>
+		<option value="Ever Burning Flame (EX)|38.006725,-122.291619">Ever Burning Flame (EX)</option>
+		<option value="First Baptist Church (San Pablo Ave)|38.001413,-122.318456">First Baptist Church (San Pablo Ave)</option>
+		<option value="Hazel Downer Thorton Memorial Grove (Dog Park) (EX)|37.979389,-122.269505">Hazel Downer Thorton Memorial Grove (Dog Park) (EX)</option>
+		<option value="Indian Mural (Pear St)|38.004677,-122.290806">Indian Mural (Pear St)</option>
+		<option value="Nina Zeitler|38.012172,-122.297312">Nina Zeitler</option>
+		<option value="Pinole City Badges (Jack in the Box)|37.996441,-122.285424">Pinole City Badges (Jack in the Box)</option>
+		<option value="Pinole Historical Mosaics (Pear St)|38.004352,-122.290896">Pinole Historical Mosaics (Pear St)</option>
+		<option value="Pinole Post Office (Pear St)|38.004231,-122.291624">Pinole Post Office (Pear St)</option>
+		<option value="Pinole Rotary Club (Louis Francis) (EX)|38.000224,-122.314896">Pinole Rotary Club (Louis Francis) (EX)</option>
+		<option value="Pinole Shores Park|38.009877,-122.312119">Pinole Shores Park</option>
+		<option value="Pinole Valley Park (EX)|37.981436,-122.268100">Pinole Valley Park (EX)</option>
+		<option value="Pinole Wave|38.005462,-122.307587">Pinole Wave</option>
+		<option value="Salt And Freshwater Mix|38.010153,-122.292108">Salt And Freshwater Mix</option>
+		<option value="San Francisco Bay Trail Marker (11 Tennant)|38.013760,-122.296840">San Francisco Bay Trail Marker (11 Tennant)</option>
+		<optgroup label="Point Pinole Regional Shoreline">Point Pinole Regional Shoreline</option>
+		<option value="China Cove Trail (EX)|38.007403,-122.362270">China Cove Trail (EX)</option>
+		<option value="Owl Alley Trail (EX)|38.001358,-122.354804">Owl Alley Trail (EX)</option>
+		<option value="Point Pinole Pier (EX)|38.012390,-122.364338">Point Pinole Pier (EX)</option>
+		<option value="Point Pinole Playground (EX)|37.995869,-122.358823">Point Pinole Playground (EX)</option>
+		<option value="Site of Giant Powder Company|37.991940,-122.356340">Site of Giant Powder Company</option>
+		<option value="Welcome To Dotson Family Marsh (EX)|37.979867,-122.364258">Welcome To Dotson Family Marsh (EX)</option>
+		<option value="Woods Trail & Giant Station Trail Marker (EX)|38.002897,-122.362511">Woods Trail & Giant Station Trail Marker (EX)</option>
+		<optgroup label="Richmond / Hilltop">Richmond / Hilltop</option>
+		<option value="All Slay Club, Richmond San Pablo 1976 Dedication Plaque|37.981167,-122.327013">All Slay Club, Richmond San Pablo 1976 Dedication Plaque</option>
+		<option value="Country Club Vist Park Dedication Plaque (EX)|37.987038,-122.342779">Country Club Vist Park Dedication Plaque (EX)</option>
+		<option value="First Baptist Church (Hilltop)|37.976851,-122.309611">First Baptist Church (Hilltop)</option>
+		<option value="Genser Gateway Memorial Statue|37.976820,-122.314025">Genser Gateway Memorial Statue</option>
+		<option value="Hilltop Auto Mall Plaza|37.984433,-122.323004">Hilltop Auto Mall Plaza</option>
+		<option value="Hilltop Church of Jesus Christ of Latter-day Saints|37.976824,-122.311454">Hilltop Church of Jesus Christ of Latter-day Saints</option>
+		<option value="Hilltop Mall Fountain and Statue|37.980616,-122.328272">Hilltop Mall Fountain and Statue</option>
+		<option value="Pinole Point Business Park Fountain A (EX)|37.99734,-122.34895">Pinole Point Business Park Fountain A (EX)</option>
+		<option value="Red Balcony|37.992882,-122.340683">Red Balcony</option>
+		<option value="Richmond Country Golf Club|37.984801,-122.350552">Richmond Country Golf Club</option>
+		<option value="San Pablo Post Office|37.988299,-122.329435">San Pablo Post Office</option>
+		<option value="Starbucks (Richmond Parkway) (EX)|37.990242,-122.335030">Starbucks (Richmond Parkway) (EX)</option>
+		<optgroup label="El Sobrante">El Sobrante</option>
+		<option value="Bunny Loves Ponies Mural|37.966146,-122.309126">Bunny Loves Ponies Mural</option>
+		<option value="El Portal First Church of Christ|37.96583,-122.32112">El Portal First Church of Christ</option>
+		<option value="El Sobrante Post Office|37.979540,-122.297258">El Sobrante Post Office</option>
+		<option value="Lamoine (Cheese) Park (EX)|37.970998,-122.280511">Lamoine (Cheese) Park (EX)</option>
+		<option value="Locksmith Shop Mural|37.964677,-122.316105">Locksmith Shop Mural</option>
+		<option value="Peniel Baptist Church|37.964622,-122.315013">Peniel Baptist Church</option>
+		<option value="Seventh Day Adventist Church|37.985937,-122.297878">Seventh Day Adventist Church</option>
+		<option value="Sobrante Terrace Arch|37.964231,-122.317178">Sobrante Terrace Arch</option>
+		<option value="Stegasaurus (Library)|37.967381,-122.309607">Stegasaurus (Library)</option>
+		<option value="The Salvation Army|37.972266,-122.303740">The Salvation Army</option>
+		<option value="United Methodist Church|37.981778,-122.296476">United Methodist Church</option>
+		<optgroup label="San Pablo / CCC">San Pablo / CCC</option>
+		<option value="Alvarado Adobe Museum|37.95877,-122.3406">Alvarado Adobe Museum</option>
+		<option value="Bruno Crypt (Cemetery)|37.96217,-122.33353">Bruno Crypt (Cemetery)</option>
+		<option value="Church of GOD|37.970182,-122.32181">Church of GOD</option>
+		<option value="Church of the Nazarene Richmond|37.96855,-122.34659">Church of the Nazarene Richmond</option>
+		<option value="Church (Wanlass Park)|37.97256,-122.34361">Church (Wanlass Park)</option>
+		<option value="Contra College Campus Map One (CCC)|37.96952,-122.34027">Contra College Campus Map One (CCC)</option>
+		<option value="Fountain of the Bells (EX)|37.96238,-122.34611">Fountain of the Bells (EX)</option>
+		<option value="In Memory of Martin Padilla (CCC)|37.97036,-122.33868">In Memory of Martin Padilla (CCC)</option>
+		<option value="New Bethel Church of Christ|37.96815,-122.34294">New Bethel Church of Christ</option>
+		<option value="Perry Monument (Cemetery)|37.96165,-122.33443">Perry Monument (Cemetery)</option>
+		<option value="Praying Saints (Cemetery)|37.960966,-122.333004">Praying Saints (Cemetery)</option>
+		<option value="Rainbow Can|37.95718,-122.3476">Rainbow Can</option>
+		<option value="Saint Joseph Statue (Cemetery)|37.960952,-122.336094">Saint Joseph Statue (Cemetery)</option>
+		<option value="San Lorenzo Ruiz (Cemetery)|37.95952,-122.33441">San Lorenzo Ruiz (Cemetery)</option>
+		<option value="Shishi Loins|37.965257,-122.342827">Shishi Loins</option>
+		<option value="Sojourner Truth Presbyterian Church (CCC)|37.9684,-122.33522">Sojourner Truth Presbyterian Church (CCC)</option>
+		<option value="St. Paul's Catholic Church|37.95721,-122.34183">St. Paul's Catholic Church</option>
+		<option value="Starbucks (San Pablo Dam Rd) (EX)|37.961447,-122.326882">Starbucks (San Pablo Dam Rd) (EX)</option>
+		<option value="Tile Drinking Fountain|37.95929,-122.34125">Tile Drinking Fountain</option>
+		<option value="What You are is What You See|37.95857,-122.34711">What You are is What You See</option>
+		<optgroup label="Richmond / San Pablo">Richmond / San Pablo</option>
+		<option value="23 HQ Solis|37.95081,-122.34748">23 HQ Solis</option>
+		<option value="Bathing Pig|37.949381,-122.359086">Bathing Pig</option>
+		<option value="Burg Park (EX)|37.94238,-122.33873">Burg Park (EX)</option>
+		<option value="Catahoula Coffee|37.93978,-122.32697">Catahoula Coffee</option>
+		<option value="Grand View Terrace|37.94352,-122.32919">Grand View Terrace</option>
+		<option value="Iglesia Evangelica Eben-Ezer|37.9546709,-122.358944">Iglesia Evangelica Eben-Ezer</option>
+		<option value="Joshua Church Of God In Christ|37.95277,-122.34756">Joshua Church Of God In Christ</option>
+		<option value="Kern Playlot|37.9479,-122.32427">Kern Playlot</option>
+		<option value="Luis Chavez Yards Baseball Field (EX)|37.952512,-122.341932">Luis Chavez Yards Baseball Field (EX)</option>
+		<option value="Mercado Latino Mural|37.94687,-122.33135">Mercado Latino Mural</option>
+		<option value="Playlot 2|37.952953,-122.356726">Playlot 2</option>
+		<option value="San Pablo Lytton Casino|37.95569,-122.33072">San Pablo Lytton Casino</option>
+		<option value="Veterans Hall Cannon|37.94655,-122.34731">Veterans Hall Cannon</option>
+		<option value="Waypointe Christian Fellowship Church|37.94548,-122.32047">Waypointe Christian Fellowship Church</option>
+		<optgroup label="Wildcat Canyon / Alvarado Park">Wildcat Canyon / Alvarado Park</option>
+		<option value="Alvarado Area Regional Park|37.9640196,-122.3499576">Alvarado Area Regional Park</option>
+		<option value="Anza Expedition 1776 (EX)|37.95203,-122.31769">Anza Expedition 1776 (EX)</option>
+		<option value="Belgums Grande Vista Sanitarium (EX)|37.94974,-122.30854">Belgums Grande Vista Sanitarium (EX)</option>
+		<option value="Camp Bay - Alvarado Park (EX)|37.95355,-122.32304">Camp Bay - Alvarado Park (EX)</option>
+		<option value="Historic Obelisk|37.95179,-122.32168">Historic Obelisk</option>
+		<option value="Wildcat Creek Trail Marker|37.952225,-122.313769">Wildcat Creek Trail Marker</option>
+		<optgroup label="North Richmond">North Richmond</option>
+		<option value="Macedonia Missionary Baptist Church|37.95862,-122.36708">Macedonia Missionary Baptist Church</option>
+		<option value="Parkway Estates Park|37.954755,-122.372081">Parkway Estates Park</option>
+		<option value="Welcome to Annie's|37.9581,-122.36062">Welcome to Annie's</option>
+		<option value="Wildcat Marsh Staging Area|37.958541,-122.373922">Wildcat Marsh Staging Area</option>
+		<optgroup label="Richmond - City Central">Richmond - City Central</option>
+		<option value="Bay Area Beverage Co.|37.92801,-122.37681">Bay Area Beverage Co.</option>
+		<option value="Beautiful Redeemed Ministries|37.936759,-122.350399">Beautiful Redeemed Ministries</option>
+		<option value="Bethel Temple Pentecostal Church|37.92541,-122.33633">Bethel Temple Pentecostal Church</option>
+		<option value="Calvary Missionary|37.93729,-122.36575">Calvary Missionary</option>
+		<option value="City Hall Fountain|37.936834,-122.343404">City Hall Fountain</option>
+		<option value="Contra Costa County Law Library|37.932175,-122.333408">Contra Costa County Law Library</option>
+		<option value="Ennis Chapel|37.924501,-122.354806">Ennis Chapel</option>
+		<option value="Galileo Club Mural|37.926891,-122.347895">Galileo Club Mural</option>
+		<option value="Gesture Statue|37.93691,-122.36858">Gesture Statue</option>
+		<option value="Guillermo - The Golden Trout Sculpture|37.93758,-122.34422">Guillermo - The Golden Trout Sculpture</option>
+		<option value="Harbour - 8 Park|37.9313,-122.36167">Harbour - 8 Park</option>
+		<option value="Iron Livestock|37.93481,-122.34739">Iron Livestock</option>
+		<option value="John F. Kennedy Park Sign (EX)|37.925631,-122.331579">John F. Kennedy Park Sign (EX)</option>
+		<option value="Lend Me Your Ears|37.9393,-122.34775">Lend Me Your Ears</option>
+		<option value="Lucas Park (EX)|37.94383,-122.35977">Lucas Park (EX)</option>
+		<option value="Patricia McKinley Garden|37.93269,-122.33424">Patricia McKinley Garden</option>
+		<option value="Richmond 2nd Street Mural|37.93111,-122.367612">Richmond 2nd Street Mural</option>
+		<option value="Richmond Beat|37.93678,-122.356071">Richmond Beat</option>
+		<option value="Richmond Green Way|37.9313,-122.36196">Richmond Green Way</option>
+		<option value="Richmond in Unity|37.935811,-122.361919">Richmond in Unity</option>
+		<option value="Richmond Post Office|37.93239,-122.34925">Richmond Post Office</option>
+		<option value="Richmond Refines It|37.93693,-122.35671">Richmond Refines It</option>
+		<option value="Richmond Station (BART)|37.93675,-122.35414">Richmond Station (BART)</option>
+		<option value="Richmond Sunflower Tiles|37.92039,-122.348475">Richmond Sunflower Tiles</option>
+		<option value="Saint Lukes United Methodist Church|37.93697,-122.33785">Saint Lukes United Methodist Church</option>
+		<option value="Sunny Richmond|37.93146,-122.35056">Sunny Richmond</option>
+		<option value="The Running Baker|37.929678,-122.347475">The Running Baker</option>
+		<option value="The Sandy Dolphin (EX)|37.93311,-122.339804">The Sandy Dolphin (EX)</option>
+		<option value="Veterans Mural|37.92784,-122.360191">Veterans Mural</option>
+		<option value="Welcome to Richmond|37.935432,-122.360065">Welcome to Richmond</option>
+		<option value="West Contra Costa YMCA|37.9282,-122.35095">West Contra Costa YMCA</option>
+		<option value="Welcome to Annie's|37.9581,-122.36062">Welcome to Annie's</option>
+		<optgroup label="Richmond - Marina Bay">Richmond - Marina Bay</option>
+		<option value="A Deluge of Humanity (EX)|37.91052,-122.35461">A Deluge of Humanity (EX)</option>
+		<option value="A Home for Shoreline Birds|37.910518,-122.337978">A Home for Shoreline Birds</option>
+		<option value="Anchorage Marina Bay Park|37.917754,-122.346947">Anchorage Marina Bay Park</option>
+		<option value="Bay Trail Cartobelisk|37.909410,-122.339824">Bay Trail Cartobelisk</option>
+		<option value="Bow of Liberty Ship (EX)|37.914013,-122.347387">Bow of Liberty Ship (EX)</option>
+		<option value="Divided We Live|37.912668,-122.345725">Divided We Live</option>
+		<option value="Hidden Treasures|37.910344,-122.335114">Hidden Treasures</option>
+		<option value="Lenses Into Time (EX)|37.909619,-122.354783">Lenses Into Time (EX)</option>
+		<option value="MARINA Bay Mural|37.918931,-122.346282">MARINA Bay Mural</option>
+		<option value="Marina Way Flags|37.917269,-122.355717">Marina Way Flags</option>
+		<option value="Richmond Bay Marina|37.914275,-122.353142">Richmond Bay Marina</option>
+		<option value="Richmond Sunflower Tiles|37.920385,-122.348465">Richmond Sunflower Tiles</option>
+		<option value="Rosie's Rivet|37.912085,-122.357970">Rosie's Rivet</option>
+		<option value="Space Rabbit Turtle|37.91301,-122.35494">Space Rabbit Turtle</option>
+		<option value="The Home Front Legacy|37.90954,-122.35681">The Home Front Legacy</option>
+		<option value="The Shores Fountain|37.911897,-122.343750">The Shores Fountain</option>
+		<optgroup label="Point Richmond">Point Richmond</option>
+		<option value="A Changing Landscape (EX)|37.91389,-122.38719">A Changing Landscape (EX)</option>
+		<option value="Brickyard Landing|37.911666,-122.380659">Brickyard Landing</option>
+		<option value="Ferries and Freight on San Francisco Bay (EX)|37.90941,-122.39055">Ferries and Freight on San Francisco Bay (EX)</option>
+		<option value="Ferry Point Loop|37.909631,-122.376352">Ferry Point Loop</option>
+		<option value="Kenny Park Plaque (Indian Fountain)(EX)|37.92458,-122.38393">Kenny Park Plaque (Indian Fountain)(EX)</option>
+		<option value="Our Lady of Mercy|37.92692,-122.38702">Our Lady of Mercy</option>
+		<option value="Point Potrero|37.913975,-122.369532">Point Potrero</option>
+		<option value="Robert J. Dornan Memorial Grove (EX)|37.91758,-122.38376">Robert J. Dornan Memorial Grove (EX)</option>
+		<option value="Ship Anchor Marker|37.924209,-122.387704">Ship Anchor Marker</option>
+		<option value="SS Red Oak Victory|37.905072,-122.365030">SS Red Oak Victory</option>
+		<option value="The Sentinel Indian Statue|37.92678,-122.38507">The Sentinel Indian Statue</option>
+		<option value="Up and Under Pub and Grill|37.92532,-122.3846">Up and Under Pub and Grill</option>
+    </select>
+	</div>
+	<div class="form-group">
+		<label for="ratime">Start Time</label>
+		<input type="time" class="ratime form-control" placeholder="Time" required>
+	</div>
+	<div class="form-group">
+		<button type="button" class="racopy btn btn-primary" data-toggle="tooltip" title="Copied">Copy</button>
+	</div>
+	<br>
+	<a href="http://telegra.ph/PokeRaiderBot-09-16" target="_blank">To learn more about @PokeRaiderBot and what commands you can use, click here.</a>
+  </div>
+</form>
+</div>
+<script>
+//Setup function for time
+function convertmeridiem(ftime)
+{
+	var splitftime = ftime.split(":"); hours = splitftime[0], minutes = splitftime[1];
+	if (hours >= 12) {
+	    hours = hours - 12;
+	}
+	if (hours == 0) {
+		hours = 12;
+	}
+	return hours + ":" + minutes;
+}
+//Build Data
+$( ".racopy" ).click(function() {
+	var raboss = $('.raboss').val();
+	var ragym = $('.ragym').val();
+	var ragymsplit = ragym.split("|");
+	var ravenue = ragymsplit[0];
+	var racoord = ragymsplit[1];
+	var ratime = $('.ratime').val();
+	var raconvertedtime = convertmeridiem(ratime);
+	new ClipboardJS('.racopy', {
+    text: function(trigger) {
+        return "/newraid "+raboss+" at "+ravenue+" "+raconvertedtime+" "+racoord;
+    }
+	});
+});
+</script>
 </body>
 </html>
-
-
-
-
-
-
-
-

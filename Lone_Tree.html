@@ -55,13 +55,13 @@
           <i class="fas fa-bars"></i>
         </button>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="Welcome.html">Welcome</a>
-            <a class="dropdown-item" href="exRaidList.html">Ex Gyms</a>
             <a class="dropdown-item" href="https://www.paypal.me/theepicpancake">Donate</a>
+            <a class="dropdown-item" href="exRaidList.html">Ex Gyms</a>
+            <a class="dropdown-item" href="index.html">Home</a>
+            <a class="dropdown-item" href="Welcome.html">Welcome</a>
           </div>
         </div>
       </div>   
-      </div>
     </div>
 
 <!-- Start Title Area -->
@@ -69,6 +69,7 @@
     <h1>Lone Tree Point</h1>
     <div id="event-info"><span id="date"></span><span id="time"></span></div>
 </header>
+<p id="noEntries">Fetching Data...</p>
 <!-- Start Instinct -->
 <div class="w3-container" id="instinctContainer">
     <ul id="instinctList"></ul>
@@ -82,7 +83,6 @@
     <ul id="valorList"></ul>
 </div>
 <!-- End Valor -->
-<p id="noEntries"></p>
 <textarea id="raidlist"></textarea>
 <!-- Footer -->
 <div class="form-group">
@@ -117,10 +117,12 @@ var list = tabletop.sheets("Lone Tree Point, Rodeo").toArray();
 if(list.length === 0) {
 
     console.log("inside the if statement");
-    var p = document.createElement("p");
-    p.innerHTML = "No EX Raid Scheduled";
-    document.getElementById('noEntries').appendChild(p);
-    console.log("Nothing to display")
+    document.getElementById("noEntries").innerHTML = "No EX Raid Scheduled";
+    // console.log("inside the if statement");
+    // var p = document.createElement("p");
+    // p.innerHTML = "No EX Raid Scheduled";
+    // document.getElementById('noEntries').appendChild(p);
+    // console.log("Nothing to display")
 
 }
 else {
