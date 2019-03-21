@@ -14,6 +14,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 <script>
 $(document).ready(function() {
@@ -77,15 +78,32 @@ $(function () {
 </head>
 <body>
   <div class="row align-items-center">
-    <div class="col-8">
-      <div class="ralogo"><img src="img/ep-logo-green.svg"></div>
+      <div class="col-8">
+        <div class="ralogo">
+          <a href="https://epicpancake.com/"
+            ><img src="../img/ep-logo-green.svg"
+          /></a>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="dropdown">
+          <button
+            style="float: right"
+            class="btn btn-primary dropdown-toggle racopy radonate"
+            type="button"
+            data-toggle="dropdown"
+          >
+          <i class="fas fa-bars"></i>
+        </button>
+          <div class="dropdown-menu">
+          	<a class="dropdown-item" href="https://www.paypal.me/theepicpancake">Donate</a>
+			<a class="dropdown-item" href="exRaidList.html">Ex Gyms</a>
+			<a class="dropdown-item" href="index.html">Home</a>
+            <a class="dropdown-item" href="Welcome.html">Welcome</a>
+          </div>
+        </div>
+      </div>   
     </div>
-    <div class="col-4">
-	<div class="form-group">
-		<a class="btn btn-primary racopy radonate" href="https://www.paypal.me/theepicpancake" role="button" target="_blank">Donate</a>
-	</div>
-    </div>
-  </div>
   <div class="form-group">
     <label for="raboss">Raid Boss</label>
     <select class="raboss form-control s2" id="s2raboss">
@@ -610,6 +628,7 @@ $(function () {
 		<option value="Neptune’s Bounty Fountain|38.05257729113295,-122.21358776092531">Neptune’s Bounty Fountain</option>
 		<option value="View of Al Zampa Memorial Bridge|38.05257729113295,-122.21358776092531">View of Al Zampa Memorial Bridge</option>
 		<optgroup label="Rodeo">Rodeo</option>
+		<option value="Coral Drive Park|38.021938,-122.250317">Coral Drive Park</option>
 		<option value="Elvis In Rodeo|38.033767,-122.267322">Elvis In Rodeo</option>
 		<option value="Giant Metal Fish and Arrow|38.038145,-122.268486">Giant Metal Fish and Arrow</option>
 		<option value="Lefty Gomez Plaque (EX)|38.031014,-122.267087">Lefty Gomez Plaque (EX)</option>
@@ -630,8 +649,8 @@ $(function () {
 		<option value="Lamp One (Victoria)|38.027197,-122.271594">Lamp One (Victoria)</option>
 		<option value="Loving Memory of Helen and Tarvin (Civic Center)|38.010752,-122.265679">Loving Memory of Helen and Tarvin (Civic Center)</option>
 		<option value="Obelisk Two (Victoria)|38.027942,-122.272332">Obelisk Two (Victoria)</option>
-		<option value="Rodeo Hercules Fire Department|38.004165,-122.261830">Rodeo Hercules Fire Department</option>
 		<option value="Playground (Refugio) (EX)|38.007269,-122.267192">Playground (Refugio) (EX)</option>
+		<option value="Rodeo Hercules Fire Department|38.004165,-122.261830">Rodeo Hercules Fire Department</option>
 		<option value="T.H.E. S.P.O.T.|37.998529,-122.248437">T.H.E. S.P.O.T.</option>
 		<option value="Valley Bible Church|38.013039,-122.257626">Valley Bible Church</option>
 		<option value="Victoria by The Bay NE Pillar|38.023410,-122.268869">Victoria by The Bay NE Pillar</option>
@@ -711,16 +730,21 @@ $(function () {
 		<option value="What You are is What You See|37.95857,-122.34711">What You are is What You See</option>
 		<optgroup label="Richmond / San Pablo">Richmond / San Pablo</option>
 		<option value="23 HQ Solis|37.95081,-122.34748">23 HQ Solis</option>
-		<option value="Bathing Pig|37.949381,-122.359086">Bathing Pig</option>
+		<option value="Bathing Pig|37.949144,-122.3569023">Bathing Pig</option>
 		<option value="Burg Park (EX)|37.94238,-122.33873">Burg Park (EX)</option>
 		<option value="Catahoula Coffee|37.93978,-122.32697">Catahoula Coffee</option>
+		<option value="Evangel Christian Center|37.9701312,-122.348436">Evangel Christian Center</option>
+		<option value="Family Church of God in Christ|37.954360,-122.356599">Family Church of God in Christ</option>
 		<option value="Grand View Terrace|37.94352,-122.32919">Grand View Terrace</option>
 		<option value="Iglesia Evangelica Eben-Ezer|37.9546709,-122.358944">Iglesia Evangelica Eben-Ezer</option>
+		<option value="Islamic Society|37.9495518,-122.3326445">Islamic Society</option>
 		<option value="Joshua Church Of God In Christ|37.95277,-122.34756">Joshua Church Of God In Christ</option>
 		<option value="Kern Playlot|37.9479,-122.32427">Kern Playlot</option>
 		<option value="Luis Chavez Yards Baseball Field (EX)|37.952512,-122.341932">Luis Chavez Yards Baseball Field (EX)</option>
 		<option value="Mercado Latino Mural|37.94687,-122.33135">Mercado Latino Mural</option>
 		<option value="Playlot 2|37.952953,-122.356726">Playlot 2</option>
+		<option value="Revive San Pablo|37.959519,-122.354434">Revive San Pablo</option>
+		<option value="Rock of Ages Church|37.957935,-122.351176">Rock of Ages Church</option>
 		<option value="San Pablo Lytton Casino|37.95569,-122.33072">San Pablo Lytton Casino</option>
 		<option value="Veterans Hall Cannon|37.94655,-122.34731">Veterans Hall Cannon</option>
 		<option value="Waypointe Christian Fellowship Church|37.94548,-122.32047">Waypointe Christian Fellowship Church</option>
@@ -734,6 +758,7 @@ $(function () {
 		<optgroup label="North Richmond">North Richmond</option>
 		<option value="Macedonia Missionary Baptist Church|37.95862,-122.36708">Macedonia Missionary Baptist Church</option>
 		<option value="Parkway Estates Park|37.954755,-122.372081">Parkway Estates Park</option>
+		<option value="Annie's Annuals|37.9585833,-122.3605205">Annie's Annuals</option>
 		<option value="Welcome to Annie's|37.9581,-122.36062">Welcome to Annie's</option>
 		<option value="Wildcat Marsh Staging Area|37.958541,-122.373922">Wildcat Marsh Staging Area</option>
 		<optgroup label="Richmond - City Central">Richmond - City Central</option>
@@ -768,7 +793,6 @@ $(function () {
 		<option value="Veterans Mural|37.92784,-122.360191">Veterans Mural</option>
 		<option value="Welcome to Richmond|37.935432,-122.360065">Welcome to Richmond</option>
 		<option value="West Contra Costa YMCA|37.9282,-122.35095">West Contra Costa YMCA</option>
-		<option value="Welcome to Annie's|37.9581,-122.36062">Welcome to Annie's</option>
 		<optgroup label="Richmond - Marina Bay">Richmond - Marina Bay</option>
 		<option value="A Deluge of Humanity (EX)|37.91052,-122.35461">A Deluge of Humanity (EX)</option>
 		<option value="A Home for Shoreline Birds|37.910518,-122.337978">A Home for Shoreline Birds</option>
