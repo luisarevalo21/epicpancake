@@ -110,7 +110,8 @@
          simpleSheet: true } )
     }
     function showInfo(data, tabletop) {
-        document.getElementById("fetchingData").innerHTML = "";      
+        document.getElementById("fetchingData").innerHTML = "";   
+
         var  woodfield = tabletop.sheets("Can You Hear There, Hercules (Lupine Road, Park)").toArray();
         var country = tabletop.sheets("Country Club Vist Park Dedication Plaque, Richmond").toArray();
         var fernandez = tabletop.sheets("Ever Burning Flame, Pinole (Fernandez Park)").toArray();
@@ -124,7 +125,7 @@
         console.log("rotary size is", rotary);
         var pinoleValleyPark = tabletop.sheets("Pinole Valley Park, Pinole").toArray();
         var playground = tabletop.sheets("Playground, Hercules (Refugio Park)").toArray();
-        
+        console.log(playground);   
         var pointPinole = tabletop.sheets("Playground, Hercules (Refugio Park)").toArray();
         var starbucksRichmondParkway = tabletop.sheets("Starbucks, Richmond Parkway location").toArray();
         var starbucksDamRoad = 
