@@ -80,6 +80,7 @@
     <li><a href="Hazel_Downer.html" id="Hazel">Hazel Downer Thorton Memorial Grove (Dog Park)</a></li>
     <li><a href="Lamoine_Park.html" id="Lamoine">Lamoine (Cheese) Park</a></li>
     <li><a href="Left_Gomez.html" id="Lefty">Lefty Gomez</a></li></li>
+    <li><a href="Nina_Zeitler.html" id="Nina">Nina Zeitler</a></li></li>
     <li><a href="Pinole_Business_Foutain.html" id="Pinole_Point">Pinole Point Business Park Fountain A</a></li>
     <li><a href="Pinole_Rotary.html" id="Rotary">Pinole Rotary Club (Louis Francis)</a></li>
     <li><a href="Pinole_Valley_Park.html" id="PVP">Pinole Valley Park</a></li>
@@ -120,6 +121,9 @@
         tabletop.sheets("Hazel Downer Thorton Memorial Grove, Pinole (Pinole Valley dog park)").toArray();
         var lamoine = tabletop.sheets("Lamoine Park, Richmond (Cheese Park)").toArray();
         var lefty = tabletop.sheets("Lefty Gomez Plaque, Rodeo").toArray();
+
+        var nina = tabletop.sheets("Nina Zeitler").toArray();
+
         // var Lone = tabletop.sheets("Lone Tree Point, Rodeo").toArray();
         var rotary = tabletop.sheets("Pinole Rotary Club, Pinole (Marlesta Rd)").toArray();
         console.log("rotary size is", rotary);
@@ -158,6 +162,11 @@
        }
        if(lefty.length !==0){
            var element =  document.getElementById("Lefty");
+           element.className += "newStyle";   
+       }
+
+       if(nina.length !==0){
+           var element =  document.getElementById("Nina");
            element.className += "newStyle";   
        }
        if(rotary.length !==0){
