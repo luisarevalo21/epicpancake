@@ -51,41 +51,113 @@
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
     <script>
-      $(document).ready(function() {
+      $(document).ready(function () {
         $(".s2").select2();
         //Fix the select2 unclear search fields
-        $(".select2").click(function(e) {
+        $(".select2").click(function (e) {
           $(".select2-search__field").attr("placeholder", "Search...");
         });
       });
-      $(function() {
+      $(function () {
         $('[data-toggle="tooltip"]').tooltip({
           trigger: "focus",
           placement: "left",
-          delay: { hide: 1500 }
+          delay: { hide: 1500 },
         });
       });
     </script>
     <style>
-      body{font-family: 'Roboto', sans-serif;font-size: 1em;background:#1C2630; padding: 1.25rem;}
-      input, button, submit { border:none; background:none; }
-      a {color:#48E08D;}
+      body {
+        font-family: "Roboto", sans-serif;
+        font-size: 1em;
+        background: #1c2630;
+        padding: 1.25rem;
+      }
+      input,
+      button,
+      submit {
+        border: none;
+        background: none;
+      }
+      a {
+        color: #48e08d;
+      }
       /* overrides */
-      .btn-primary{border:none;}
-      .btn-primary:hover, .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle, .btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus, .btn-primary.focus, .btn-primary:focus {background: #48CFE0;}
-      .bs-tooltip-auto[x-placement^=right] .arrow::before, .bs-tooltip-right .arrow::before {display: none;}
-      .tooltip{font-family: 'Roboto', sans-serif !important}
-      .ralogo {margin: 1.25rem 0 1.5rem 0; max-width:14rem;}
-      label {color:#6c7d8e;}
-      .select2-container .select2-selection--single{height:auto;}
-      .select2-container .select2-selection--single .select2-selection__rendered, .ratime, .racopy {padding: 1rem .75rem; line-height: 28px; min-height:60px;border-radius: .25rem;}
-      .select2-container--default .select2-selection--single .select2-selection__arrow {top: 16px;right: 6px;}
-      .racopy{background: linear-gradient(135deg, #48E08D 0%, #48CFE0 100%); font-weight: bold; width:100%; margin-top: 1.5rem;}
-      .radonate {max-width:8rem; float:right; margin-top:0;}
-      .tooltip-inner{background: #1C2630; font-weight: bold; width:100%;padding: 0.6rem .75rem; line-height: 28px; border-radius: 100px; right:20px; position: relative;}
+      .btn-primary {
+        border: none;
+      }
+      .btn-primary:hover,
+      .btn-primary:not(:disabled):not(.disabled).active,
+      .btn-primary:not(:disabled):not(.disabled):active,
+      .show > .btn-primary.dropdown-toggle,
+      .btn-primary:not(:disabled):not(.disabled).active:focus,
+      .btn-primary:not(:disabled):not(.disabled):active:focus,
+      .show > .btn-primary.dropdown-toggle:focus,
+      .btn-primary.focus,
+      .btn-primary:focus {
+        background: #48cfe0;
+      }
+      .bs-tooltip-auto[x-placement^="right"] .arrow::before,
+      .bs-tooltip-right .arrow::before {
+        display: none;
+      }
+      .tooltip {
+        font-family: "Roboto", sans-serif !important;
+      }
+      .ralogo {
+        margin: 1.25rem 0 1.5rem 0;
+        max-width: 14rem;
+      }
+      label {
+        color: #6c7d8e;
+      }
+      .select2-container .select2-selection--single {
+        height: auto;
+      }
+      .select2-container
+        .select2-selection--single
+        .select2-selection__rendered,
+      .ratime,
+      .racopy {
+        padding: 1rem 0.75rem;
+        line-height: 28px;
+        min-height: 60px;
+        border-radius: 0.25rem;
+      }
+      .select2-container--default
+        .select2-selection--single
+        .select2-selection__arrow {
+        top: 16px;
+        right: 6px;
+      }
+      .racopy {
+        background: linear-gradient(135deg, #48e08d 0%, #48cfe0 100%);
+        font-weight: bold;
+        width: 100%;
+        margin-top: 1.5rem;
+      }
+      .radonate {
+        max-width: 8rem;
+        float: right;
+        margin-top: 0;
+      }
+      .tooltip-inner {
+        background: #1c2630;
+        font-weight: bold;
+        width: 100%;
+        padding: 0.6rem 0.75rem;
+        line-height: 28px;
+        border-radius: 100px;
+        right: 20px;
+        position: relative;
+      }
       /* .select2-container--default .select2-results>.select2-results__options, .select2-search--dropdown {background:#0f171f;color:white;}
       .select2-container--default .select2-results__option--highlighted[aria-selected] {background: #F13E2D;}*/
-      .select2-container--default .select2-selection--single,.select2-dropdown,.form-control {border:none;}
+      .select2-container--default .select2-selection--single,
+      .select2-dropdown,
+      .form-control {
+        border: none;
+      }
     </style>
     <link rel="shortcut icon" type="image/png" href="/img/icon72.png" />
     <link rel="shortcut icon" type="image/png" href="/img/icon72.png" />
@@ -152,9 +224,9 @@
 
     <div class="form-group">
       <label for="raboss">Raid Boss</label>
-      <select class="raboss form-control s2">
+      <select class="raboss form-control s2" id="raidBoss">
         <option value="">-</option>
-        <option value="Level 3 TBD">Level 3 TBD</option>
+        <!-- <option value="Level 3 TBD">Level 3 TBD</option>
         <option value="Level 4 TBD">Level 4 TBD</option>
         <option value="Level 5 TBD">Level 5 TBD</option>
         <option value="Abomasnow">Abomasnow</option>
@@ -304,9 +376,9 @@
         <option value="Geodude">Geodude</option>
         <option value="Gible">Gible</option>
         <option value="Girafarig">Girafarig</option>
-        <option value="Giratina (Altered Forme)"
-          >Giratina (Altered Forme)</option
-        >
+        <option value="Giratina (Altered Forme)">
+          Giratina (Altered Forme)
+        </option>
         <option value="Giratina (Origin Forme)">Giratina (Origin Forme)</option>
         <option value="Glaceon">Glaceon</option>
         <option value="Glalie">Glalie</option>
@@ -655,7 +727,7 @@
         <option value="Zangoose">Zangoose</option>
         <option value="Zapdos">Zapdos</option>
         <option value="Zigzagoon">Zigzagoon</option>
-        <option value="Zubat">Zubat</option>
+        <option value="Zubat">Zubat</option> -->
       </select>
     </div>
     <!-- 		gym form 
@@ -699,19 +771,41 @@
         Tabletop.init({
           key: publicSpreadsheetUrl,
           callback: showInfo,
-          simpleSheet: true
+          simpleSheet: true,
         });
       }
 
       var copyArray = [];
       var select = document.getElementById("s2raboss");
+      var pokemonList = document.getElementById("raidBoss");
       function showInfo(data, tabletop) {
         console.log("it worked");
         console.log(data);
         var myArray = tabletop.sheets("Coords").toArray();
+        var pokemon = tabletop.sheets("Pokemon List").toArray();
+
+        // console.log("pokemon is", pokemon);
+
+        pokemon.map((element) => {
+          console.log(element);
+          var x = document.createElement("option");
+          x.value = element[0];
+          x.text = element[0];
+
+          pokemonList.add(x);
+        });
+
+        // var x = document.createElement("option");
+        // x.value = pokemon[0];
+        // x.text = pokemon[0];
+
+        // pokemonList.add(x);
+        // console.log(pokemonList.options.add());
+
+        // console.log(pokemon);
 
         for (var i = 0; i < myArray.length; i++) {
-          console.log(myArray[i][0]);
+          // console.log(myArray[i][0]);
           if (myArray[i][0] === "Crockett") {
             var y = document.createElement("OPTGROUP");
             y.setAttribute("label", "Crockett");
@@ -773,7 +867,7 @@
             y.setAttribute("label", "Point Richmond");
             select.options.add(y);
           } else {
-            console.log(myArray[i][1]);
+            // console.log(myArray[i][1]);
             var value = myArray[i][0] + "|" + myArray[i][1];
             select.options.add(new Option(myArray[i][0], value));
           }
@@ -792,7 +886,7 @@
         return hours + ":" + minutes;
       }
       //Build Data
-      $(".racopy").click(function() {
+      $(".racopy").click(function () {
         var raboss = $(".raboss").val();
         var ragym = $(".ragym").val();
         var ragymsplit = ragym.split("|");
@@ -801,7 +895,7 @@
         var ratime = $(".ratime").val();
         var raconvertedtime = convertmeridiem(ratime);
         new ClipboardJS(".racopy", {
-          text: function(trigger) {
+          text: function (trigger) {
             return (
               "/newraid " +
               raboss +
@@ -810,9 +904,10 @@
               " " +
               raconvertedtime +
               " " +
-              racoord
+              racoord +
+              " -i"
             );
-          }
+          },
         });
       });
 

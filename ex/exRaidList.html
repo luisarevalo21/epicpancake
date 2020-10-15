@@ -87,6 +87,8 @@
     <li><a href="Playground.html" id="Playground">Playground (Refugio)</a></li>
     <li><a href="Starbucks_Richmond_Parkway.html" id="Starbucks_Richmond">Starbucks (Richmond Parkway)</a></li>
     <li><a href="Starbucks_Dam_Road.html" id="Starbucks_SanPablo">Starbucks (San Pablo Dam Road)</a></li>
+    <li><a href="Tshusima_Street_Park.html" id="Tshusima_Street_Park_Hercules">Tshusima Street Park, Hercules</a></li>
+
 </ul>
 <!-- Footer -->
 <div class="form-group">
@@ -135,6 +137,10 @@
         var starbucksDamRoad = 
         tabletop.sheets("Starbucks, San Pablo Dam Rd. location (El Sob/San Pablo)").toArray();
         var pointPinole = tabletop.sheets("Pt. Pinole Business Park Fountain, Richmond").toArray();
+
+        var tshusimaStreetPark = tabletop.sheets("Tshusima Street Park, Hercules").toArray();
+
+
         if(woodfield.length !==0 ){
             var element =  document.getElementById("Woodfield");
             element.className += "newStyle";
@@ -193,6 +199,12 @@
            var element =  document.getElementById("Pinole_Point");
            element.className += "newStyle";   
        }
+       if(tshusimaStreetPark.length !==0){
+           var element =  document.getElementById("Tshusima_Street_Park_Hercules");
+           element.className += "newStyle";   
+       }
+
+
    }
    window.addEventListener('DOMContentLoaded', init)
 </script>
